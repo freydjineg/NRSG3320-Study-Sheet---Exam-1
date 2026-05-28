@@ -256,6 +256,11 @@ body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--tx);min-heig
 .score-box{background:var(--bg2);border-radius:8px;padding:.5rem .9rem;text-align:center}
 .score-box .sn{font-size:1.4rem;font-weight:700;color:var(--or)}
 .score-box .sl{font-size:.72rem;color:var(--tx3);text-transform:uppercase;letter-spacing:.04em}
+/* Sticky first column — keep background consistent with row striping */
+.dtbl tr:nth-child(even) td:first-child{background:#fdf8f2}
+.dtbl tr:hover td:first-child{background:#fff5ee}
+/* Module header rows — sticky first cell spans all */
+.dtbl tr.drug-mod-hdr td{position:static}
 </style>
 </head>
 <body>
@@ -343,7 +348,26 @@ body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--tx);min-heig
       <div class="box box-tip"><strong>&#x1FA7A; Nurse</strong>Acts as a <em>witness</em> to the signature only. Makes sure the patient understood and wasn't coerced. Signs after the patient.</div>
       <div class="box box-warn"><strong>&#x1F6AB; Do NOT Proceed If...</strong>Patient is confused, intoxicated, under 18 without guardian, or received sedation BEFORE signing.</div>
     </div>
-    <div class="box box-warn" style="margin-top:.5rem"><strong>&#x1F6A8; Emergency Exception</strong>If patient is unconscious and life is threatened &rarr; <em>implied consent</em>. Do not wait for signature. A competent patient who is awake can always refuse treatment.</div>
+    <div class="box box-warn" style="margin-top:.5rem"><strong>&#x1F6A8; Emergency Exception</strong>If patient is unconscious and life is threatened &rarr; <em>implied consent</em>. Do not wait for signature. A competent patient who is awake can always refuse treatment.
+<div class="box box-info" style="margin-top:.6rem"><strong>&#x1F4CB; Pre-Op Checklist Essentials</strong>
+  <div class="grid2" style="margin-top:.3rem">
+    <ul>
+      <li><strong>Identification bracelet</strong> on patient</li>
+      <li><strong>Allergy bracelet</strong> visible</li>
+      <li>Verify NPO status and IV access</li>
+      <li>Appropriate forms completed</li>
+      <li>Past medical history reviewed</li>
+    </ul>
+    <ul>
+      <li>Physical exam documented</li>
+      <li>Remove make-up, jewelry, dentures, glasses/contacts</li>
+      <li>Identify and mark surgical site</li>
+      <li>Administer pre-op medications (antibiotics must <strong>peak in bloodstream before incision</strong>)</li>
+      <li>Pre-op warming to prevent hypothermia</li>
+    </ul>
+  </div>
+</div>
+</div>
   </div>
 
 <div class="section">
@@ -359,12 +383,43 @@ body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--tx);min-heig
       <tr><td><strong>Herbal supplements</strong></td><td>Ginkgo, garlic, fish oil = antiplatelet. Stop 1&ndash;2 weeks pre-op</td><td>Ask about ALL supplements</td></tr>
       <tr><td><strong>Smoking</strong></td><td>CO reduces O&sup2; delivery; vasoconstriction impairs healing</td><td>Encourage cessation 8 weeks pre-op</td></tr>
     </table>
-  </div>
+  
+<div class="box box-tip" style="margin-top:.6rem"><strong>&#x1F4DA; Pre-Op Education &#x2014; What to Teach</strong>
+  <ul style="margin-top:.3rem">
+    <li><strong>Pre-admission testing:</strong> Labs, health history, demographics, consent forms completed before admission day</li>
+    <li>What recovery looks like: devices, mobility, range-of-motion exercises, SCDs, IS</li>
+    <li>Pain management expectations &#x2014; some pain is normal; multimodal approach including PCA</li>
+    <li><strong>Cognitive coping strategies:</strong> relaxation techniques, distraction, guided imagery &#x2014; goal is to reduce fear and anxiety</li>
+  </ul>
+</div>
+</div>
   <div style="text-align:center;margin:.6rem 0 .4rem"><button class="ps-trigger" data-pskey="m1_preop" onclick="psGo(this)">&#x1F3C1; Pit Stop &mdash; test yourself here!</button></div>
 <div class="section">
       <h3>&#x1F6E1;&#xFE0F; Intra-Op: Surgical Team Roles</h3>
       <div class="box box-info"><strong>Circulating Nurse (Unsterile)</strong>Patient advocate. Verifies consent, calls Time Out, monitors aseptic technique, counts. Moves freely around the OR.</div>
-      <div class="box box-purple"><strong>Scrub Nurse (Sterile)</strong>Handles instruments, maintains the sterile field, counts sponges/needles. Stays within the sterile zone only.</div>
+      <div class="box box-purple"><strong>Scrub Nurse (Sterile)</strong>Handles instruments, maintains the sterile field, counts sponges/needles. Stays within the sterile zone only.
+<div class="grid2" style="margin-top:.6rem">
+  <div class="box box-info"><strong>&#x1F9B7; Full OR Team</strong>
+    <ul style="margin-top:.3rem">
+      <li><strong>Surgeon</strong> — performs the procedure</li>
+      <li><strong>RNFA</strong> — Registered Nurse First Assist</li>
+      <li><strong>CRNA / Anesthesiologist</strong> — manages anesthesia and airway throughout</li>
+      <li><strong>Circulating Nurse</strong> — patient advocate, unsterile, roams freely</li>
+      <li><strong>Scrub Nurse</strong> — sterile, handles instruments, performs <strong>counts</strong> (sponges, needles, instruments)</li>
+    </ul>
+  </div>
+  <div class="box box-purple"><strong>&#x1F9E4; Sterile Field Details</strong>
+    <ul style="margin-top:.3rem">
+      <li><strong>Drapes:</strong> positioned front to back to maintain sterility</li>
+      <li>Items dropped into field from unsterile package</li>
+      <li>1-foot perimeter around sterile field must be maintained</li>
+      <li>Breached = contaminated — remove immediately</li>
+      <li><strong>Grounding equipment</strong> properly applied for electrosurgical safety</li>
+      <li>Latex allergy flagged — latex-free environment prepared</li>
+    </ul>
+  </div>
+</div>
+</div>
       <h4>Sterile Field Rules — "When in Doubt, Throw It Out!"</h4>
       <ul>
         <li>Sterile gown = only <strong>front (chest to field level)</strong> and <strong>sleeves (2" above elbow to cuff)</strong></li>
@@ -451,7 +506,32 @@ body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--tx);min-heig
         <div class="box box-ok"><strong>&#x2705; Signs PCA is Working</strong>Controlled pain, patient awake and comfortable, RR &ge;12, SpO2 &ge;92%.</div>
         <div class="box box-warn"><strong>&#x1F6A8; Opioid Overdose Signs</strong>RR &lt;12, SpO2 &lt;90%, hard to wake up &rarr; <span class="badge badge-crit">Naloxone (Narcan) NOW</span></div>
       </div>
+    
+<div class="box box-ok" style="margin-top:.6rem"><strong>&#x1F3AF; Multimodal Pain Management</strong>
+  <p style="margin-top:.3rem;font-size:.88rem">The goal is to use <strong>multiple types</strong> of pain control together so opioid doses stay lower and side effects are reduced.</p>
+  <div class="grid2" style="margin-top:.4rem">
+    <div>
+      <p><strong>Pharmacological:</strong></p>
+      <ul>
+        <li>Opioids (PCA, oral)</li>
+        <li>NSAIDs (ketorolac)</li>
+        <li>Acetaminophen (scheduled)</li>
+        <li>Regional/epidural blocks</li>
+      </ul>
     </div>
+    <div>
+      <p><strong>Non-pharmacological:</strong></p>
+      <ul>
+        <li><strong>Relaxation techniques</strong> (deep breathing, progressive muscle relaxation)</li>
+        <li><strong>Distraction</strong> (music, TV, conversation)</li>
+        <li><strong>Guided imagery</strong> — visualizing peaceful scenes</li>
+        <li>Repositioning, ice/heat as appropriate</li>
+        <li>Splinting incision when coughing</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
   </div>
   <div style="text-align:center;margin:.6rem 0 .4rem"><button class="ps-trigger" data-pskey="m1_postop" onclick="psGo(this)">&#x1F3C1; Pit Stop &mdash; test yourself here!</button></div>
 <div class="section">
@@ -657,7 +737,15 @@ body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--tx);min-heig
         <li><strong>Treatment:</strong> KCl replacement. IV potassium: <strong>NEVER IV push</strong>. Max 10 mEq/hr peripheral. Always on a pump with cardiac monitoring.</li>
       </ul>
       <h4>&#x2B06;&#xFE0F; Hyperkalemia (K+ &gt;5.0)</h4>
-      <div class="box box-warn"><strong>Signs:</strong> Peaked T-waves, wide QRS, V-fib, muscle weakness. K+ &gt;7.0 = cardiac arrest risk!</div>
+      <div class="box box-warn"><strong>Signs:</strong> Peaked T-waves, wide QRS, V-fib, muscle weakness. K+ &gt;7.0 = cardiac arrest risk!
+<div class="box box-info" style="margin-top:.5rem"><strong>&#x1F48A; Newer K+ Binders</strong>
+  <ul style="margin-top:.3rem">
+    <li><strong>Lokelma (Sodium Zirconium Cyclosilicate)</strong> — newer, preferred potassium binder. Selectively traps K+ in GI tract, onset 1-2 hours, no sorbitol needed, better tolerated than Kayexalate</li>
+    <li><strong>Kayexalate (Sodium Polystyrene Sulfonate)</strong> — older binder, slower (hours to days), requires sorbitol (risk of GI necrosis)</li>
+    <li>Both <strong>remove</strong> K+ from the body — unlike insulin/bicarb which only shift it temporarily</li>
+  </ul>
+</div>
+</div>
       <ul>
         <li><strong>Causes:</strong> Kidney failure, ACE inhibitors, spironolactone, cell death (burns, rhabdo)</li>
         <li><strong>Treatment sequence:</strong> <strong>C-BIG-K:</strong> Calcium gluconate &rarr; Bicarb &rarr; Insulin+Glucose &rarr; Kayexalate &rarr; (dialysis)</li>
@@ -936,7 +1024,9 @@ body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--tx);min-heig
         Surgical removal of atherosclerotic plaque from the carotid artery to reduce stroke risk. Used when carotid stenosis is significant. Can be done under general or local/regional anesthesia. Post-op: monitor for stroke symptoms, cranial nerve deficits, hematoma at incision site.
       </div>
     </div>
-  </div>
+  
+<div class="box box-ok" style="margin-top:.5rem"><strong>&#x267F; Chronic Phase — Independence with Assistive Devices</strong>Promote independence using assistive devices for ADLs (cane, walker, grab bars, splints, adapted utensils). PT/OT referral and involvement. Encourage fluids and high-fiber diet with stool softeners. Unilateral neglect: touch and use both sides. Hemianopsia: scan full field, approach from unaffected side, dress weak side first.</div>
+</div>
 </div>
   <div style="text-align:center;margin:.6rem 0 .4rem"><button class="ps-trigger" data-pskey="m3_stroke" onclick="psGo(this)">&#x1F3C1; Pit Stop &mdash; test yourself here!</button></div>
 <div class="section">
@@ -1193,7 +1283,11 @@ body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--tx);min-heig
     <div class="grid2" style="margin-top:.8rem">
       <div class="box box-warn"><strong>&#x1F6A8; Hypertensive Emergency</strong>BP &gt;180/120 + end-organ damage (stroke, MI, AKI, pulmonary edema). Reduce MAP by <strong>25% in 1 hour</strong> (not to normal!). IV medications. ICU. Rapid drop = ischemia!</div>
       <div class="box box-tip"><strong>&#x26A0; Hypertensive Urgency</strong>BP &gt;180/120 but <em>NO</em> organ damage. Oral meds. Target normalization over 24&ndash;48 hours.</div>
-    </div>
+    
+<div class="box box-info" style="margin-top:.5rem"><strong>&#x1F4CF; Blood Pressure Reference Values</strong>Normal BP = &lt;120/80 mmHg. Elevated = 120-129/&lt;80. Stage 1 HTN = 130-139/80-89. Stage 2 HTN = &ge;140/&ge;90. Hypertensive Crisis = &gt;180/120. Usually <strong>asymptomatic</strong> until organ damage occurs. Check BP in both arms; use correct cuff size.</div>
+
+<div class="grid2" style="margin-top:.6rem"><div class="box box-warn"><strong>&#x1FA79; Hypokalemia ECG Changes</strong><ul style="margin-top:.3rem"><li>Flat or inverted T-waves</li><li><strong>Prominent U-wave</strong> (bump after T-wave)</li><li>ST depression</li><li>Risk: ventricular arrhythmias, worsens digoxin toxicity</li></ul></div><div class="box box-warn"><strong>&#x26A1; Hyperkalemia Management</strong><ul style="margin-top:.3rem"><li><strong>Calcium gluconate IV</strong> — stabilizes heart (does not lower K+)</li><li><strong>Insulin + Dextrose</strong> — shifts K+ into cells (temporary)</li><li><strong>Sodium bicarb</strong> — shifts K+ intracellularly</li><li><strong>Kayexalate / Lokelma</strong> — removes K+ from body in stool</li><li><strong>Dialysis</strong> — for critically high levels</li><li>ECG: peaked T &rarr; wide QRS &rarr; flat P &rarr; sine wave = emergency</li></ul></div></div>
+</div>
     <h4 style="margin-top:1rem">Non-Drug Treatment — DASH</h4>
     <p>Sodium restriction <strong>&le;2g/day</strong>, weight loss, exercise, quit smoking, reduce alcohol and caffeine, stress management. Try lifestyle for 1&ndash;3 months before adding medication for Stage 1.</p>
   </div>
@@ -1255,7 +1349,34 @@ body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--tx);min-heig
     <div class="grid2">
       <div class="box box-info"><strong>What it Does</strong>Increases heart contraction strength (positive inotrope). Slows heart rate. Used for HF + A-fib.</div>
       <div class="box box-warn"><strong>&#x1F6A8; Toxicity Watch!</strong>Therapeutic: 0.5&ndash;2 ng/mL. Toxic: &gt;2 ng/mL. Signs: anorexia, N/V, yellow-green halos, bradycardia. HOLD if HR &lt;60 bpm. Hypokalemia DOUBLES toxicity risk!</div>
-    </div>
+    
+<div class="grid2" style="margin-top:.6rem">
+  <div class="box box-info"><strong>&#x1F4CB; Diagnosing Heart Failure</strong>
+    <ul style="margin-top:.3rem">
+      <li><strong>Echocardiogram</strong> — EF &lt;40% = HFrEF; EF &ge;50% = HFpEF; shows ventricle size</li>
+      <li><strong>BNP / NT-proBNP</strong> — elevated = ventricular wall stress. Key lab for HF</li>
+      <li>Chest X-ray — cardiomegaly, pulmonary edema, pleural effusion</li>
+      <li>EKG — dysrhythmias, LVH pattern</li>
+      <li>Labs: cardiac enzymes (rule out MI), CMP (renal function)</li>
+      <li>Stress test, cardiac catheterization if needed</li>
+    </ul>
+  </div>
+  <div class="box box-warn"><strong>&#x1F49A; Low Cardiac Output / Poor Perfusion Signs</strong>
+    <ul style="margin-top:.3rem">
+      <li><strong>Fatigue</strong> and weakness (muscles not perfused)</li>
+      <li><strong>Cool, pale extremities</strong> (peripheral vasoconstriction)</li>
+      <li><strong>Decreased urine output</strong> &lt;30 mL/hr (kidneys not perfused)</li>
+      <li><strong>Confusion / restlessness</strong> (brain not perfused)</li>
+      <li>Hypotension, tachycardia (compensatory)</li>
+      <li>Narrow pulse pressure</li>
+    </ul>
+  </div>
+</div>
+
+<div class="box box-tip" style="margin-top:.6rem"><strong>&#x2696;&#xFE0F; HF Self-Monitoring: Daily Weight + Fluid Restriction</strong><ul style="margin-top:.3rem"><li><strong>Daily weight:</strong> same time, same scale, same clothes each morning. Report &gt;2-3 lbs in 24 hours OR &gt;5 lbs in one week to provider</li><li><strong>Fluid restriction</strong> if prescribed: typically 1.5-2 L/day in advanced HF</li><li>Low-sodium diet &le;2g/day. Avoid large amounts of caffeine</li><li>Balance rest and activity periods. Avoid isometric exercises</li></ul></div>
+
+<div class="box box-warn" style="margin-top:.5rem"><strong>&#x1F9D3; Gerontologic HF: Prostate + Diuretic Resistance</strong>Elderly men on diuretics: monitor for bladder distention from urethral obstruction (enlarged prostate). Diuretics increase urine output and can precipitate acute urinary retention. Monitor voiding, check for distension, Foley if retention. Older adults may be resistant to diuretics (decreased renal function) and more sensitive to volume changes.</div>
+</div>
   </div>
 
 <div class="section">
@@ -1336,7 +1457,28 @@ body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--tx);min-heig
         <div class="box box-info"><strong>Venous Insufficiency</strong><em>Blood pooling in legs.</em> Medial ankle ulcers, varicose veins, brown/leathery skin (hemosiderin), pitting edema. Signs: warm, brown, ulcer at medial malleolus.</div>
         <div class="box box-tip"><strong>&#x1F9E6; Compression Therapy</strong>Must check ABI &ge;0.8 before applying compression (arterial disease = compression causes ischemia!). Apply in morning before standing. Graduated compression.</div>
       </div>
-    </div>
+    
+<div class="grid2" style="margin-top:.6rem">
+  <div class="box box-tip"><strong>&#x1F9D3; Vascular Gerontologic Changes</strong>
+    <ul style="margin-top:.3rem">
+      <li>Aging causes <strong>vessel wall changes</strong> — walls stiffen and lose elasticity</li>
+      <li>Stiff vessels = <strong>increased peripheral resistance</strong></li>
+      <li>Impaired blood flow and O2/nutrient delivery to tissues</li>
+      <li>Increased <strong>left ventricular workload</strong> (heart works harder against stiff vessels)</li>
+      <li>Explains why isolated systolic HTN is common in elderly</li>
+    </ul>
+  </div>
+  <div class="box box-ok"><strong>&#x1F48A; PAD Treatment — Medications</strong>
+    <ul style="margin-top:.3rem">
+      <li><strong>Antiplatelet therapy:</strong> Aspirin, Clopidogrel — prevent clot formation</li>
+      <li><strong>Cilostazol (Pletal):</strong> PDE III inhibitor — vasodilation + antiplatelet → improves claudication walking distance. <strong>CONTRAINDICATED in HF</strong></li>
+      <li><strong>High-dose statins:</strong> Stabilize plaque, reduce LDL</li>
+      <li>Endovascular: angioplasty ± stent, atherectomy</li>
+      <li>Surgical: bypass grafts</li>
+    </ul>
+  </div>
+</div>
+</div>
     <table class="ctbl" style="margin-top:.8rem">
       <tr><th></th><th>Arterial (PAD)</th><th>Venous</th></tr>
       <tr><td>Pain</td><td>Claudication (walking) or rest pain (severe)</td><td>Aching, heaviness — worse with standing</td></tr>
@@ -1783,7 +1925,7 @@ body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--tx);min-heig
   </div>
   <div class="dtbl-wrap">
     <table class="dtbl">
-      <thead><tr><th>Drug</th><th>Mod</th><th>&#x1F4AC; Plain English</th><th>Mechanism</th><th>Uses</th><th>Side Effects</th><th>Antidote</th><th>&#x1F4A1; Pearl</th></tr></thead>
+      <thead><tr><th style="position:sticky;top:0;left:0;z-index:11;background:var(--ord)">Drug</th><th style="position:sticky;top:0;z-index:10;background:var(--ord)">Mod</th><th>&#x1F4AC; Plain English</th><th>Mechanism</th><th>Uses</th><th>Side Effects</th><th>Antidote</th><th>&#x1F4A1; Pearl</th></tr></thead>
       <tbody id="drug-tbody"></tbody>
     </table>
   </div>
@@ -1823,7 +1965,7 @@ function showTab(id){
 // ══ FLASHCARD DATA ══
 var FC_ALL=[
   {mod:1,q:'What are the 3 phases of perioperative care?',a:'Pre-op (decision to surgery), Intra-op (in OR to PACU), Post-op (PACU to full recovery).'},
-  {mod:1,q:'Who signs the informed consent and what is the nurse\'s role?',a:'Patient signs. Surgeon explains risks/benefits. Nurse is a WITNESS only — not responsible for explaining the procedure.'},
+  {mod:1,q:'Who signs the informed consent and what is the nursing role?',a:'Patient signs. Surgeon explains risks/benefits. Nurse is a WITNESS only — not responsible for explaining the procedure.'},
   {mod:1,q:'What is the minimum acceptable urine output post-operatively?',a:'30 mL/hour. Below this = oliguria = assess Foley for kinks first, then notify provider.'},
   {mod:1,q:'What is the antidote for malignant hyperthermia?',a:'DANTROLENE IV, 2.5 mg/kg bolus. Also: stop volatile anesthetic, 100% O2, cool patient, correct K+ and acid-base.'},
   {mod:1,q:'What triggers malignant hyperthermia?',a:'Volatile halogenated anesthetics (sevoflurane, halothane, isoflurane, desflurane) AND succinylcholine. Genetic (MSH gene). Safe IV drugs do NOT trigger MH.'},
@@ -1962,7 +2104,7 @@ var SCENARIOS=[
       q:'Which complication is occurring and what is the IMMEDIATE priority?',
       opts:['Septic shock \u2014 give broad-spectrum antibiotics and IV fluids','Malignant hyperthermia \u2014 discontinue sevoflurane and administer dantrolene IV NOW','Anaphylaxis \u2014 administer epinephrine IM and diphenhydramine','Thyroid storm \u2014 notify endocrinology'],
       ans:1,rat:'Temp >40\u00b0C + muscle rigidity + rising CO2 + tachycardia during volatile anesthetic = Malignant Hyperthermia. DANTROLENE 2.5 mg/kg IV is the ONLY treatment. Stop the triggering agent (sevoflurane) immediately. MH is a genetic disorder triggered by volatile halogenated anesthetics and succinylcholine. If untreated: rhabdomyolysis, hyperkalemia, organ failure, death.'},
-     {lbl:'Why Hyperkalemia?',vignette:'Dantrolene is given and sevoflurane stopped. A nursing student asks why the patient\'s potassium is now 6.8 mEq/L when she had normal K+ pre-op.',
+     {lbl:'Why Hyperkalemia?',vignette:'Dantrolene is given and sevoflurane stopped. A nursing student asks why the patients potassium is now 6.8 mEq/L when she had normal K+ pre-op.',
       q:'Why does hyperkalemia occur in malignant hyperthermia?',
       opts:['IV fluids are diluting sodium more than potassium','Muscle cell breakdown (rhabdomyolysis) releases intracellular potassium into the bloodstream','Dantrolene causes potassium shifts as a side effect','Volatile anesthetics directly release K+ from bone'],
       ans:1,rat:'MH causes uncontrolled skeletal muscle metabolism \u2014 muscles essentially burn themselves. This causes rhabdomyolysis (rapid muscle breakdown), which releases intracellular potassium into the bloodstream (hyperkalemia) and myoglobin into the urine (dark urine, renal failure risk). This is why monitoring electrolytes and urine output is critical during MH treatment.'}
@@ -1970,7 +2112,7 @@ var SCENARIOS=[
   {mod:2, icon:'\u1F9EA', name:'Mrs. Okafor, 72 yrs', details:'Medical Floor \u2014 Chronic Heart Failure + Digoxin',
    stages:[
      {lbl:'Morning Labs',vignette:'Mrs. Okafor has chronic HF and takes digoxin 0.125 mg daily and furosemide 40 mg daily. Morning labs: K+ 2.9 mEq/L, digoxin level 1.8 ng/mL. She reports nausea, loss of appetite, and says things look "yellowish."',
-      q:'What is the nurse\'s priority action?',
+      q:'What is the nursing priority action?',
       opts:['Give digoxin as ordered since 1.8 ng/mL is within the 0.5-2.0 therapeutic range','Hold digoxin AND furosemide, notify the provider immediately \u2014 hypokalemia amplifies digoxin toxicity at any level','Give the furosemide but hold the digoxin since the K+ is low','Recheck labs in 4 hours before making a decision'],
       ans:1,rat:'K+ 2.9 mEq/L with digoxin 1.8 ng/mL + nausea, anorexia, and YELLOW VISUAL CHANGES = digoxin TOXICITY. Even though 1.8 is technically "therapeutic," hypokalemia dramatically amplifies digoxin toxicity at ANY level. Yellow-green visual halos (xanthopsia) are a classic toxicity sign. Both medications should be held and the provider notified immediately.'},
      {lbl:'KCl Infusion',vignette:'The provider orders IV potassium chloride 20 mEq in 100 mL NS over 2 hours via peripheral IV. A concentrated KCl vial arrives from pharmacy.',
@@ -1985,7 +2127,7 @@ var SCENARIOS=[
       opts:['Give a large bolus of plain water to rehydrate and dilute electrolytes','Position side-lying to protect the airway, give IV lorazepam for seizure cessation, prepare 3% hypertonic saline per provider order','Rapidly correct sodium to 135 mEq/L over 2 hours to stop the seizure','Restrict all fluids until seizure stops'],
       ans:1,rat:'Na+ 115 with active seizure = severe symptomatic hyponatremia. Priorities: (1) Side-lying \u2014 protects airway from secretions. (2) IV lorazepam \u2014 stops the active seizure. (3) 3% NS slowly \u2014 goal is to raise Na+ by 4-6 mEq/L to stop neurological symptoms. Never give plain water (worsens hyponatremia). Never correct >8-10 mEq/L in 24 hours.'},
      {lbl:'Correction Rate',vignette:'After 6 hours of 3% NS, Na+ has risen from 115 to 122 mEq/L (7 mEq rise). The resident wants to continue correcting rapidly to reach 135 mEq/L within the next 6 hours.',
-      q:'What is the nurse\'s concern about this plan?',
+      q:'What is the nursing concern about this plan?',
       opts:['The 3% NS should be stopped immediately and switched to free water to dilute the sodium back down','Correcting >10-12 mEq/L in 24 hours risks osmotic demyelination syndrome (ODS) \u2014 irreversible brainstem damage. The rate must be slowed.','This plan is appropriate \u2014 normalizing sodium quickly is always the goal','Potassium must be corrected before any sodium changes'],
       ans:1,rat:'Chronic hyponatremia: maximum 8-10 mEq/L per 24 hours (some guidelines allow up to 12). Already at 7 mEq in 6 hours \u2014 only 1-3 more mEq allowed today. Osmotic demyelination syndrome (ODS/central pontine myelinolysis) = irreversible destruction of the myelin sheath in the brainstem \u2014 causes quadriplegia, dysphagia, locked-in syndrome, death. There is no treatment for ODS \u2014 prevention is the only option.'}
    ]},
@@ -2018,7 +2160,7 @@ var SCENARIOS=[
   {mod:4, icon:'\u2764\uFE0F', name:'Mr. Rivera, 62 yrs', details:'ED \u2014 Inferior STEMI',
    stages:[
      {lbl:'ECG Interpretation',vignette:'Mr. Rivera has 8/10 crushing chest pain radiating to his jaw for 1 hour. ECG shows 3mm ST elevation in leads II, III, and aVF. BP is 88/56, HR 54.',
-      q:'Before giving ANY medications, what is the nurse\'s most important assessment?',
+      q:'Before giving ANY medications, what is the nursing most important assessment?',
       opts:['Check for aspirin allergy before giving antiplatelet therapy','Obtain right-sided ECG leads (V3R-V4R) to assess for right ventricular infarction BEFORE giving any vasodilating medications','Check troponin results before making any treatment decisions','Administer sublingual nitroglycerin immediately for the chest pain'],
       ans:1,rat:'Inferior STEMI (II, III, aVF) = RCA occlusion = high risk of RV infarction. The RV is PRELOAD DEPENDENT \u2014 it needs adequate venous filling to generate output. Nitroglycerin causes venodilation (reduces preload). If RV is infarcted and you give nitrates = no venous return to RV = no cardiac output = catastrophic hypotension. ALWAYS check right-sided leads BEFORE any vasodilating drug.'},
      {lbl:'RV Confirmed',vignette:'Right-sided leads show 2mm ST elevation in V4R, confirming right ventricular infarction. The provider then orders sublingual nitroglycerin for chest pain. BP is 88/56.',
@@ -2033,7 +2175,7 @@ var SCENARIOS=[
   {mod:4, icon:'\u1F494', name:'Mrs. Williams, 76 yrs', details:'Medical Floor \u2014 Acute Decompensated HF',
    stages:[
      {lbl:'Acute Presentation',vignette:'Mrs. Williams has chronic heart failure. She gained 5 lbs in 2 days and now has severe dyspnea, SpO2 86% on room air, bilateral crackles throughout all lung fields, pink frothy sputum, and HR 118.',
-      q:'What is the nurse\'s FIRST independent action (no order needed)?',
+      q:'What is the nursing FIRST independent action (no order needed)?',
       opts:['Call the provider and wait for orders before doing anything else','Position in high-Fowler\'s or have patient sit and dangle legs over side of bed (reduces preload via gravity), and apply supplemental oxygen immediately','Administer IV furosemide 80 mg push as standard of care','Restrict all fluids immediately'],
       ans:1,rat:'High-Fowler\'s positioning is an INDEPENDENT nursing action \u2014 no order needed. Gravity pulls venous blood away from the chest, reducing preload and pulmonary congestion. Apply O2 simultaneously. These two actions can happen immediately before any orders arrive. IV furosemide requires a provider order. Never delay positioning and oxygen while waiting for orders in acute pulmonary edema.'},
      {lbl:'Digoxin + Diuresis',vignette:'Mrs. Williams\' digoxin level is 2.4 ng/mL. She has been on furosemide causing ongoing hypokalemia. Today\'s K+ is 3.0 mEq/L.',
@@ -2383,7 +2525,7 @@ function buildDrugTable(){
       html+='<tr class="drug-mod-hdr"><td colspan="8" style="background:'+modColors[d.mod]+';color:#fff;font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;padding:.5rem .9rem">'+modNames[d.mod]+'</td></tr>';
     }
     html+='<tr data-mod="'+d.mod+'" data-name="'+d.name.toLowerCase()+'">';
-    html+='<td style="font-weight:700;color:var(--ord);min-width:140px">'+d.name+'</td>';
+    html+='<td style="font-weight:700;color:var(--ord);min-width:140px;position:sticky;left:0;z-index:2;background:var(--card);box-shadow:2px 0 4px rgba(0,0,0,.06)">'+d.name+'</td>';
     html+='<td style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:12px;font-size:.72rem;font-weight:700;background:#f5ede0;color:var(--ord)">M'+d.mod+'</span></td>';
     html+='<td style="font-style:italic;color:#8b5a00;font-size:.85rem;min-width:180px;line-height:1.5">'+(d.plain||d.moa)+'</td>';
     html+='<td style="font-size:.84rem;color:var(--tx2);min-width:150px;line-height:1.5">'+d.moa+'</td>';
@@ -2416,7 +2558,7 @@ function filterDrugs(){
       html+='<tr class="drug-mod-hdr"><td colspan="8" style="background:'+modColors[d.mod]+';color:#fff;font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;padding:.5rem .9rem">'+modNames[d.mod]+'</td></tr>';
     }
     html+='<tr data-mod="'+d.mod+'" data-name="'+d.name.toLowerCase()+'">';
-    html+='<td style="font-weight:700;color:var(--ord);min-width:140px">'+d.name+'</td>';
+    html+='<td style="font-weight:700;color:var(--ord);min-width:140px;position:sticky;left:0;z-index:2;background:var(--card);box-shadow:2px 0 4px rgba(0,0,0,.06)">'+d.name+'</td>';
     html+='<td style="text-align:center"><span style="display:inline-block;padding:2px 8px;border-radius:12px;font-size:.72rem;font-weight:700;background:#f5ede0;color:var(--ord)">M'+d.mod+'</span></td>';
     html+='<td style="font-style:italic;color:#8b5a00;font-size:.85rem;min-width:180px;line-height:1.5">'+(d.plain||d.moa)+'</td>';
     html+='<td style="font-size:.84rem;color:var(--tx2);min-width:150px;line-height:1.5">'+d.moa+'</td>';
@@ -2445,7 +2587,7 @@ window.onload=function(){
 var PS_BANKS={
   m1_phases:[
     {q:'Which surgical phase begins when the decision for surgery is made and ends when the patient is transferred to the OR table?',opts:['Intraoperative','Postoperative','Preoperative','Perioperative'],ans:2,exp:'Preoperative phase: decision for surgery → patient on OR table. Covers consent, labs, NPO, teaching, IV access.'},
-    {q:'Elective surgery differs from required surgery in that elective surgery:',opts:['Must be done within 24-36 hours','Is done within weeks to months','Can be scheduled at the patient\'s convenience with no urgency','Is life-threatening if delayed'],ans:2,exp:'Elective surgery has no urgency — hernia repair, cosmetic surgery, joint replacement. Required = weeks to months (cataracts, BPH). Urgent = 24-36 hours. Emergent = NOW.'},
+    {q:'Elective surgery differs from required surgery in that elective surgery:',opts:['Must be done within 24-36 hours','Is done within weeks to months','Can be scheduled at the patients convenience with no urgency','Is life-threatening if delayed'],ans:2,exp:'Elective surgery has no urgency — hernia repair, cosmetic surgery, joint replacement. Required = weeks to months (cataracts, BPH). Urgent = 24-36 hours. Emergent = NOW.'},
     {q:'A patient has a ruptured aortic aneurysm. This is classified as:',opts:['Elective','Required','Urgent','Emergent'],ans:3,exp:'Emergent surgery = life-threatening, must be done immediately. Examples: ruptured aorta, stab wound, fractured skull. No time for full pre-op workup.'},
     {q:'Which gerontologic change increases post-op delirium risk?',opts:['Increased subcutaneous fat','Neurological changes and reduced CNS reserve','Enhanced hepatic metabolism','Increased GI motility'],ans:1,exp:'Older adults have reduced CNS reserve → post-op/ICU delirium is common. Also: decreased cardiac/respiratory reserve, reduced GI motility, depressed renal/hepatic function, fragile integument.'},
     {q:'A patient takes warfarin daily. The nurse knows this increases surgical risk primarily because:',opts:['It causes hypertension intraoperatively','It impairs wound healing and increases bleeding risk','It causes malignant hyperthermia','It interferes with anesthesia metabolism'],ans:1,exp:'Anticoagulants (warfarin, heparin, NOACs) significantly increase intraoperative bleeding risk. Must be held pre-op per protocol. Corticosteroids impair healing; NSAIDs cause platelet dysfunction.'},
@@ -2454,12 +2596,15 @@ var PS_BANKS={
   ],
 
   m1_preop:[
-    {q:'Who is legally responsible for obtaining informed surgical consent?',opts:['The bedside nurse','The anesthesiologist','The surgeon','The charge nurse'],ans:2,exp:'The SURGEON obtains informed consent — it is their procedure. The nurse\'s role is to witness the signature and verify the patient understands. Nurse does NOT explain the procedure.'},
-    {q:'A patient received IV morphine 30 minutes ago. The consent form is presented now. The nurse should:',opts:['Witness the signature — pain medication doesn\'t affect consent','Refuse to witness — patient must be consented before sedative medications','Ask the family to sign instead','Document the patient verbally agreed'],ans:1,exp:'Patient must be mentally capable AND consented BEFORE sedative/opioid medications. If already given, delay consent and notify the surgeon. Impaired judgment invalidates consent.'},
+    {q:'Who is legally responsible for obtaining informed surgical consent?',opts:['The bedside nurse','The anesthesiologist','The surgeon','The charge nurse'],ans:2,exp:'The SURGEON obtains informed consent — it is their procedure. The nursing role is to witness the signature and verify the patient understands. Nurse does NOT explain the procedure.'},
+    {q:'A patient received IV morphine 30 minutes ago. The consent form is presented now. The nurse should:',opts:['Witness the signature — pain medication does not affect consent','Refuse to witness — patient must be consented before sedative medications','Ask the family to sign instead','Document the patient verbally agreed'],ans:1,exp:'Patient must be mentally capable AND consented BEFORE sedative/opioid medications. If already given, delay consent and notify the surgeon. Impaired judgment invalidates consent.'},
     {q:'Pre-op patient education about incentive spirometry is important because:',opts:['It prevents DVT formation','It reduces hypoxemia, atelectasis, and pneumonia by promoting deep breathing','It controls post-op pain','It prevents urinary retention'],ans:1,exp:'IS expands the lungs, prevents alveolar collapse (atelectasis). Patients taught pre-op use it more effectively post-op. Also teach: coughing, deep breathing, SCDs, pain management, cognitive coping strategies.'},
     {q:'Which item on the pre-op checklist specifically prevents wrong-site surgery?',opts:['Allergy bracelet','Removal of dentures','Identification and marking of the surgical site','NPO verification'],ans:2,exp:'Identifying and marking the surgical site is a critical WHO Surgical Safety Checklist component to prevent wrong-site surgery. The surgeon marks the site pre-operatively.'},
     {q:'Pre-operative antibiotics should be administered to:',opts:['Peak in the bloodstream at the time of incision','Be given post-operatively to prevent SSI','Be given only if the patient has a known infection','Peak 4-6 hours before surgery'],ans:0,exp:'Pre-op antibiotics must peak in the bloodstream at the time of incision to be most effective at preventing surgical site infection (SSI). Timing is critical — usually 30-60 min before incision.'},
-    {q:'The primary purpose of pre-op warming before transporting the patient is to:',opts:['Treat existing hypothermia','Prevent intraoperative and post-op hypothermia','Reduce anxiety','Improve peripheral IV access'],ans:1,exp:'Pre-op warming prevents intraoperative hypothermia, which increases risk of SSI, bleeding, delayed anesthesia arousal, and cardiovascular events — especially in older adults with poor thermoregulation.'}
+    {q:'The primary purpose of pre-op warming before transporting the patient is to:',opts:['Treat existing hypothermia','Prevent intraoperative and post-op hypothermia','Reduce anxiety','Improve peripheral IV access'],ans:1,exp:'Pre-op warming prevents intraoperative hypothermia, which increases risk of SSI, bleeding, delayed anesthesia arousal, and cardiovascular events — especially in older adults with poor thermoregulation.'},
+    {q:'Which pre-op checklist items prevent wrong-patient and wrong-site surgery?',opts:['Allergy bracelet only','NPO verification','Identification bracelet AND surgical site marking','IV access check'],ans:2,exp:'Identification bracelet plus surgical site marking together prevent wrong-patient and wrong-site errors. The surgeon marks the site, the team confirms during the WHO Time Out. Both items address the most catastrophic OR errors.'}
+    ,{q:'When must pre-op antibiotics be given?',opts:['Immediately after incision','Before incision so they peak in bloodstream at the time of cutting','Anytime within 24 hours','Only if infection is present'],ans:1,exp:'Pre-op antibiotics must PEAK in the bloodstream BEFORE the incision. This is when SSI contamination risk is highest. Given after the cut provides no prophylactic benefit. Antibiotic timing is a specific checklist item.'}
+    ,{q:'Pre-op coping strategy education includes:',opts:['Detailed surgical technique','Relaxation, distraction, and guided imagery to reduce anxiety','Instructions to avoid pain medication','Team member introductions'],ans:1,exp:'Cognitive coping strategies include relaxation, distraction, and guided imagery. Taught pre-op to reduce fear and anxiety. Goal: relieve anxiety, decrease fear, ensure understanding of the surgical intervention.'}
   ],
 
   m1_intraop:[
@@ -2469,7 +2614,10 @@ var PS_BANKS={
     {q:'Malignant hyperthermia is triggered by:',opts:['Hypothermia during surgery','Certain anesthetic agents in genetically susceptible patients','Allergic reaction to latex','Blood transfusion reaction'],ans:1,exp:'MH = severe reaction to anesthetic agents (succinylcholine, volatile gases) with genetic component. Presents: markedly elevated temp, muscle rigidity, tachycardia, rapid shallow breathing. Treatment: dantrolene IMMEDIATELY.'},
     {q:'The WHO Surgical Safety Checklist "Time Out" occurs:',opts:['Before the patient enters the OR','Immediately before skin incision, with ALL team members participating','After anesthesia induction','At the end of surgery before closing'],ans:1,exp:'Time Out = immediately before skin incision. ALL work stops. Entire team confirms: correct patient, correct site, correct procedure. It is a mandatory safety pause. The circulating nurse typically leads it.'},
     {q:'A patient develops muscle rigidity, temperature of 40.5°C, and tachycardia after anesthesia induction. Priority action:',opts:['Apply cooling blankets and monitor','Administer dantrolene immediately and call for help','Increase IV fluid rate','Administer acetaminophen and reassess in 30 minutes'],ans:1,exp:'This is malignant hyperthermia — a life-threatening emergency. Dantrolene is the antidote. Also: stop triggering agents, cool the patient, correct acidosis and hyperkalemia. If untreated → rhabdomyolysis, organ failure, death.'},
-    {q:'The primary risk of intraoperative hypothermia includes:',opts:['Hypertension and tachycardia','Increased surgical site infection, bleeding, and delayed arousal from anesthesia','Hyperkalemia and cardiac dysrhythmias','Increased risk of malignant hyperthermia'],ans:1,exp:'Intraoperative hypothermia complications: SSI, increased bleeding, delayed arousal from anesthesia, cardiovascular events. Prevention: warm air blankets, warmed IV fluids, dry wet drapes, increase OR temperature.'}
+    {q:'The primary risk of intraoperative hypothermia includes:',opts:['Hypertension and tachycardia','Increased surgical site infection, bleeding, and delayed arousal from anesthesia','Hyperkalemia and cardiac dysrhythmias','Increased risk of malignant hyperthermia'],ans:1,exp:'Intraoperative hypothermia complications: SSI, increased bleeding, delayed arousal from anesthesia, cardiovascular events. Prevention: warm air blankets, warmed IV fluids, dry wet drapes, increase OR temperature.'},
+    {q:'Surgical instrument counting is the joint responsibility of:',opts:['Surgeon only','Scrub nurse alone','Both scrub nurse and circulating nurse before during and after surgery','Anesthesiologist'],ans:2,exp:'Counts are a JOINT duty of scrub nurse AND circulating nurse. They count before surgery, during, and before closure. Both must agree before the wound is closed. Discrepancy requires searching the field and X-ray if needed.'}
+    ,{q:'Once sterile drapes are placed:',opts:['They can be repositioned by the surgeon','They cannot be moved — repositioning contaminates the field','Replace every 30 minutes','Only circulating nurse can adjust them'],ans:1,exp:'Sterile drapes cannot be repositioned once placed — moving them contaminates the field. Applied front to back. 1-foot perimeter must be maintained. When in doubt, it is contaminated.'}
+    ,{q:'The anesthesiologist or CRNA manages:',opts:['Instrument counting','The sterile field','All phases of anesthesia and continuous airway and hemodynamic monitoring throughout surgery','Circulating around the OR'],ans:2,exp:'The anesthesiologist or CRNA manages induction, maintenance, and emergence, and continuously monitors airway, vital signs, and hemodynamics throughout the ENTIRE procedure.'}
   ],
 
   m1_complications:[
@@ -2482,21 +2630,23 @@ var PS_BANKS={
   ],
 
   m1_postop:[
-    {q:'On arrival to PACU, the nurse\'s first priority assessment is:',opts:['Pain level on 0-10 scale','Airway patency and respiratory status','Blood pressure and heart rate','Surgical site and dressing'],ans:1,exp:'Airway first — always. Anesthesia causes loss of protective airway reflexes. Assess: airway patency, respiratory rate, SpO2, breath sounds. Then VS, neuro status, surgical site, pain, IV lines, drains.'},
+    {q:'On arrival to PACU, the nursing first priority assessment is:',opts:['Pain level on 0-10 scale','Airway patency and respiratory status','Blood pressure and heart rate','Surgical site and dressing'],ans:1,exp:'Airway first — always. Anesthesia causes loss of protective airway reflexes. Assess: airway patency, respiratory rate, SpO2, breath sounds. Then VS, neuro status, surgical site, pain, IV lines, drains.'},
     {q:'The 5 W\'s of post-op fever map complications to post-op days. "Wind" refers to:',opts:['DVT on POD 4-5','Urinary tract infection on POD 3-5','Atelectasis/pneumonia on POD 1-2','Wound infection on POD 5-7'],ans:2,exp:'Wind (POD 1-2) = respiratory complications, atelectasis, pneumonia. Water (POD 3-5) = UTI. Wound (POD 5-7) = surgical site infection. Walking (POD 4-6) = DVT/thrombophlebitis. Wonder drugs = drug fever.'},
     {q:'A patient in PACU has SpO2 of 88%, is restless, diaphoretic, and tachycardic. This most likely indicates:',opts:['Pain requiring opioid administration','Hypoxemia requiring O2 and respiratory support','Hypovolemia requiring fluid bolus','DVT requiring anticoagulation'],ans:1,exp:'Classic hypoxemia: restlessness (brain not getting O2), diaphoresis, tachycardia, low SpO2. Intervene: O2, positioning, encourage deep breathing, notify provider. Do not give opioids — will worsen respiratory depression.'},
     {q:'Which anesthesia type carries the highest risk of hypotension from vasodilation?',opts:['General anesthesia','Regional — spinal and epidural','Conscious sedation','Local anesthetic'],ans:1,exp:'Spinal and epidural anesthesia block sympathetic nerves → vasodilation → hypotension. Treat fluids first. Epidural can be titrated up/down; spinal is a one-time dose. Both keep the patient awake (or lightly sedated).'},
-    {q:'A PCA pump lockout period is designed to:',opts:['Limit nursing workload','Prevent the patient from self-administering during the most dangerous absorption window','Allow the previous dose to reach peak effect before the next dose is given','Reduce pharmacy costs'],ans:2,exp:'Lockout period (usually 6-10 min) prevents overdose by allowing the previous dose to reach peak effect. If the patient is too sedated, they won\'t push the button — a built-in safety mechanism. Never let a family member push the button.'},
-    {q:'A family member asks to push the PCA button while the patient sleeps. The nurse should:',opts:['Allow it — keeping pain controlled prevents complications','Educate that this bypasses the safety mechanism and is strictly prohibited','Allow it only if the patient is a child','Consult pharmacy first'],ans:1,exp:'PCA by proxy = NEVER. The patient\'s level of consciousness IS the safety check. If too sedated to push the button, they should not receive more opioid. Family pushing the button can cause fatal respiratory depression.'},
+    {q:'A PCA pump lockout period is designed to:',opts:['Limit nursing workload','Prevent the patient from self-administering during the most dangerous absorption window','Allow the previous dose to reach peak effect before the next dose is given','Reduce pharmacy costs'],ans:2,exp:'Lockout period (usually 6-10 min) prevents overdose by allowing the previous dose to reach peak effect. If the patient is too sedated, they will not push the button — a built-in safety mechanism. Never let a family member push the button.'},
+    {q:'A family member asks to push the PCA button while the patient sleeps. The nurse should:',opts:['Allow it — keeping pain controlled prevents complications','Educate that this bypasses the safety mechanism and is strictly prohibited','Allow it only if the patient is a child','Consult pharmacy first'],ans:1,exp:'PCA by proxy = NEVER. The patients level of consciousness IS the safety check. If too sedated to push the button, they should not receive more opioid. Family pushing the button can cause fatal respiratory depression.'},
     {q:'The PACU nurse receives handoff from the OR. Which piece of information is MOST critical for immediate patient safety?',opts:['Surgeon\'s contact information','Anesthesia used, reversal agents given, and any complications','Patient\'s insurance information','Family\'s location in the waiting room'],ans:1,exp:'Critical OR handoff: anesthesia type and reversal agents (affects LOC and reversal timing), any intraoperative complications, estimated blood loss, last vitals, immediate post-op plan (vent settings, pain management, location of family).'},
-    {q:'Which post-op intervention BEST prevents atelectasis in all post-op patients?',opts:['Routine antibiotic prophylaxis','Incentive spirometry, coughing, deep breathing, and early ambulation','Prophylactic chest physiotherapy for all patients','Continuous oxygen via nasal cannula'],ans:1,exp:'Universal post-op respiratory prevention: incentive spirometry (10 reps/hour while awake), coughing and deep breathing, q2h repositioning, early ambulation. These expand collapsed alveoli and mobilize secretions.'}
+    {q:'Which post-op intervention BEST prevents atelectasis in all post-op patients?',opts:['Routine antibiotic prophylaxis','Incentive spirometry, coughing, deep breathing, and early ambulation','Prophylactic chest physiotherapy for all patients','Continuous oxygen via nasal cannula'],ans:1,exp:'Universal post-op respiratory prevention: incentive spirometry (10 reps/hour while awake), coughing and deep breathing, q2h repositioning, early ambulation. These expand collapsed alveoli and mobilize secretions.'},
+    {q:'Multimodal pain management means:',opts:['High-dose opioids alone','Combining multiple analgesic types to reduce opioid requirements and side effects','Opioids plus benzodiazepines only','Medications only at pain score 8 out of 10'],ans:1,exp:'Multimodal = multiple pain pathways simultaneously: opioids plus NSAIDs plus acetaminophen plus regional blocks. Lower opioid doses achieve better control with fewer side effects like respiratory depression, constipation, and sedation.'}
+    ,{q:'Appropriate non-pharmacological post-op pain strategies include:',opts:['Heat pads directly on wounds','Relaxation, distraction, guided imagery, repositioning, splinting incision when coughing','Restrict all movement to protect incision','Limit visitors'],ans:1,exp:'Non-pharmacological methods complement medications. Relaxation, distraction, and guided imagery reduce anxiety which amplifies pain. Splinting the incision when coughing reduces movement-related pain. These reduce total opioid requirements.'}
   ],
 
   m1_postop2:[
     {q:'Atelectasis typically develops on post-op day:',opts:['1-2','3-4','5-7','7-10'],ans:0,exp:'Atelectasis: POD 1-2 from collapsed alveoli due to shallow breathing, immobility, inadequate coughing. Prevention: incentive spirometry, coughing and deep breathing, q2h repositioning, early ambulation.'},
     {q:'Post-op pneumonia typically develops on day:',opts:['1-2','3-5','7-10','10-14'],ans:1,exp:'Pneumonia: POD 3-5 from infection, aspiration, or immobility. Signs: dyspnea, increased RR, crackles, fever, cough, chest pain. Treatment: antibiotics, chest PT, postural drainage, suctioning, hydration.'},
     {q:'The minimum acceptable post-op urine output is:',opts:['10 mL/hr','20 mL/hr','30 mL/hr','50 mL/hr'],ans:2,exp:'Minimum 30 mL/hr. Below this = oliguria — check Foley for kinks first, then notify provider. Indicates adequate renal perfusion. Less than 30 = possible hemorrhage, hypovolemia, or renal complication.'},
-    {q:'A patient 6 hours post-op has not voided and reports suprapubic pressure. The nurse\'s first action is:',opts:['Insert a Foley catheter immediately','Bladder scan to assess urinary retention','Administer IV fluids','Ambulate the patient to the bathroom'],ans:1,exp:'Bladder scan first to assess retention before any intervention. If retention confirmed (>400 mL): try non-invasive measures first (ambulate, run warm water, privacy, voiding position), then straight cath if still unable.'},
+    {q:'A patient 6 hours post-op has not voided and reports suprapubic pressure. The nursing first action is:',opts:['Insert a Foley catheter immediately','Bladder scan to assess urinary retention','Administer IV fluids','Ambulate the patient to the bathroom'],ans:1,exp:'Bladder scan first to assess retention before any intervention. If retention confirmed (>400 mL): try non-invasive measures first (ambulate, run warm water, privacy, voiding position), then straight cath if still unable.'},
     {q:'When progressing a post-op patient from lying to ambulating, the correct sequence is:',opts:['Supine → immediate ambulation','Supine → dangle at bedside → sit in chair → ambulate','Supine → stand at bedside immediately','Low Fowler\'s → High Fowler\'s → immediate ambulation'],ans:1,exp:'Dangle at bedside BEFORE standing — allows orthostatic adjustment and prevents falls. Low Fowler\'s unless contraindicated (increases thorax size for lung expansion). Ambulation progressively increases day by day starting POD 1.'},
     {q:'PACU Phase I focuses on:',opts:['Discharge teaching and oral intake','1:1 monitoring, full VS q5-15 min, airway management until stable','Ambulation and activity progression','Transfer directly to home'],ans:1,exp:'PACU Phase I: most intensive — 1:1 nursing, VS q5-15 min, LOC monitoring, airway management, pain/nausea control. Patient remains until stable and meets discharge criteria to Phase II or inpatient floor.'},
     {q:'Risk factors for poor post-op wound healing include: (select the best answer)',opts:['Young age and normal BMI','Tobacco use, poorly controlled diabetes, and corticosteroid use','High-protein diet and early ambulation','NSAIDs taken day of surgery only'],ans:1,exp:'Poor healing risk factors: age, hemorrhage, hypovolemia, edema, poor nutrition, corticosteroids, anticoagulants, shock, acidosis, hypoxia, immunosuppression, diabetes, tobacco use. Tobacco causes vasoconstriction — cessation recommended 8 weeks pre-op.'}
@@ -2514,8 +2664,8 @@ var PS_BANKS={
     {q:'A post-op patient has absent bowel sounds, vomiting, and abdominal distension on POD 2. This suggests:',opts:['Normal post-op ileus — no intervention needed','Paralytic ileus requiring NG tube and NPO status','Appendicitis','Bowel perforation requiring immediate surgery'],ans:1,exp:'Paralytic ileus: failure of bowel peristalsis after surgery from anesthesia or bowel manipulation. Signs: absent bowel sounds, distension, no flatus, vomiting. Management: NPO, NG tube for decompression, IV fluids, ambulation. Avoid surgery if possible.'},
     {q:'To prevent post-op thrombophlebitis, the nurse should:',opts:['Encourage the patient to dangle legs over the bed frequently','Apply sequential compression devices (SCDs) and encourage early ambulation','Restrict fluids to prevent venous distension','Elevate legs with pillows under the knees'],ans:1,exp:'DVT/thrombophlebitis prevention: SCDs (remove twice daily to check skin), anticoagulants as prescribed, early ambulation, passive ROM q2h, no dangling legs (increases venous pooling), no pressure on popliteal area, anti-embolism stockings.'},
     {q:'Post-op constipation interventions include all of the following EXCEPT:',opts:['Increase fluid intake to 3000 mL/day','Encourage fiber-rich foods and early ambulation','Restrict oral intake until confirmed bowel movement','Stool softeners and laxatives as prescribed'],ans:2,exp:'Constipation interventions: fluids (3000 mL/day), fiber, early ambulation, privacy and adequate time, stool softeners/laxatives. Restricting oral intake worsens constipation. Return of bowel sounds and passage of flatus signal GI recovery.'},
-    {q:'A post-op patient\'s wound has edges pulling apart with no exposed intestines visible. This is called:',opts:['Evisceration','Dehiscence','Herniation','Fistula formation'],ans:1,exp:'Dehiscence = wound edges separating. Risk factors: obesity, infection, poor nutrition, increased abdominal pressure. Cover with sterile moist dressing, notify surgeon immediately, place in low Fowler\'s with knees bent. Evisceration = organs protruding through wound — medical emergency.'},
-    {q:'The nurse notes the post-op patient\'s calf is warm, firm, and tender. Priority action:',opts:['Massage the calf to relieve muscle spasm','Notify the surgeon — DVT is suspected, avoid manipulation','Apply a warm compress and elevate','Document as expected finding and reassess in 4 hours'],ans:1,exp:'DVT signs: unilateral calf warmth, firmness, tenderness, vein feels cord-like. NEVER massage — emboli risk. Notify surgeon, elevate 30 degrees (no pressure on popliteal), initiate anticoagulants as ordered, prepare for Doppler ultrasound.'}
+    {q:'A post-op patients wound has edges pulling apart with no exposed intestines visible. This is called:',opts:['Evisceration','Dehiscence','Herniation','Fistula formation'],ans:1,exp:'Dehiscence = wound edges separating. Risk factors: obesity, infection, poor nutrition, increased abdominal pressure. Cover with sterile moist dressing, notify surgeon immediately, place in low Fowler\'s with knees bent. Evisceration = organs protruding through wound — medical emergency.'},
+    {q:'The nurse notes the post-op patients calf is warm, firm, and tender. Priority action:',opts:['Massage the calf to relieve muscle spasm','Notify the surgeon — DVT is suspected, avoid manipulation','Apply a warm compress and elevate','Document as expected finding and reassess in 4 hours'],ans:1,exp:'DVT signs: unilateral calf warmth, firmness, tenderness, vein feels cord-like. NEVER massage — emboli risk. Notify surgeon, elevate 30 degrees (no pressure on popliteal), initiate anticoagulants as ordered, prepare for Doppler ultrasound.'}
   ],
 
   m2_fluids:[
@@ -2535,7 +2685,9 @@ var PS_BANKS={
     {q:'Hypernatremia causes brain cells to:',opts:['Swell due to fluid shifting into the cells','Shrink due to fluid shifting out of the cells','Remain unchanged','Fill with sodium causing depolarization'],ans:1,exp:'Hypernatremia = high serum Na → high osmolality → water shifts OUT of cells → cells shrink → CNS effects: restlessness, twitching, seizures (severe). Treat: gradual Na correction with hypotonic or isotonic fluids, restrict sodium.'},
     {q:'A patient on thiazide diuretics develops hyponatremia. This is classified as:',opts:['Euvolemic hyponatremia','Hypervolemic hyponatremia','Hypovolemic hyponatremia','Dilutional hyponatremia'],ans:2,exp:'Thiazide diuretics cause sodium AND water loss, but more sodium → hypovolemic hyponatremia. Other causes: GI losses (vomiting/diarrhea), excessive sweating. Treatment: replace sodium and fluids, adjust diuretic therapy.'},
     {q:'ADH is released when:',opts:['Serum osmolality drops and blood pressure rises','Serum osmolality rises or blood volume falls — tells kidneys to retain water','Aldosterone levels are high','Sodium levels are above normal'],ans:1,exp:'ADH released when: serum osmolality rises OR blood volume/pressure falls. ADH acts on collecting ducts → water retention → dilutes serum osmolality. SIADH = excess ADH → excessive water retention → dilutional hyponatremia.'},
-    {q:'Clinical manifestations of hyponatremia include all of the following EXCEPT:',opts:['Seizures and confusion','Muscle cramps and diminished reflexes','Extreme thirst and dry mouth','Orthostatic hypotension and decreased urine output'],ans:2,exp:'Extreme thirst and dry mouth are signs of HYPERNATREMIA (high osmolality triggers thirst). Hyponatremia signs: seizures, stupor, lethargy, confusion, abdominal cramping, muscle spasms, diminished reflexes, decreased UO, shallow respirations.'}
+    {q:'Clinical manifestations of hyponatremia include all of the following EXCEPT:',opts:['Seizures and confusion','Muscle cramps and diminished reflexes','Extreme thirst and dry mouth','Orthostatic hypotension and decreased urine output'],ans:2,exp:'Extreme thirst and dry mouth are signs of HYPERNATREMIA (high osmolality triggers thirst). Hyponatremia signs: seizures, stupor, lethargy, confusion, abdominal cramping, muscle spasms, diminished reflexes, decreased UO, shallow respirations.'},
+    {q:'Severe symptomatic hyponatremia with active seizures requires:',opts:['Water restriction alone','D5W infusion','3% hypertonic saline slowly correcting max 8-10 mEq per liter per 24 hours','0.9% NS bolus'],ans:2,exp:'Severe symptomatic hyponatremia requires 3% NS. The 8-10 mEq/L per 24 hour limit is critical — too fast causes osmotic demyelination syndrome (ODS), permanent brainstem damage. Monitor Na+ every 2-4 hours.'}
+    ,{q:'SIADH produces which category of hyponatremia?',opts:['Hypovolemic','Hypervolemic','Euvolemic — normal volume but diluted sodium from excess ADH water retention','Isotonic'],ans:2,exp:'SIADH = ADH keeps firing, kidneys retain water, volume is normal or slightly elevated, sodium gets diluted. This is euvolemic hyponatremia. Treatment = water restriction. 3% NS only for severe symptoms like active seizures.'}
   ],
 
   m2_fluids2:[
@@ -2550,12 +2702,14 @@ var PS_BANKS={
   ],
 
   m2_potassium:[
-    {q:'A patient\'s ECG shows peaked T waves and a widened QRS. Serum K+ is 6.8. Priority intervention:',opts:['Oral potassium supplements','IV calcium gluconate to protect the heart, then shift/remove K+','Increase IV fluid rate','Administer spironolactone'],ans:1,exp:'Hyperkalemia with ECG changes = cardiac emergency. First: IV calcium gluconate to stabilize myocardial membrane. Then temporariliy shift K+ into cells (insulin/dextrose, beta-2 agonists, bicarb). Then remove K+ (Kayexalate, Lokelma, dialysis).'},
+    {q:'A patients ECG shows peaked T waves and a widened QRS. Serum K+ is 6.8. Priority intervention:',opts:['Oral potassium supplements','IV calcium gluconate to protect the heart, then shift/remove K+','Increase IV fluid rate','Administer spironolactone'],ans:1,exp:'Hyperkalemia with ECG changes = cardiac emergency. First: IV calcium gluconate to stabilize myocardial membrane. Then temporariliy shift K+ into cells (insulin/dextrose, beta-2 agonists, bicarb). Then remove K+ (Kayexalate, Lokelma, dialysis).'},
     {q:'Hypokalemia ECG changes include:',opts:['Peaked T waves and widened QRS','ST depression, flat/inverted T waves, and prominent U wave','ST elevation and prolonged PR interval','Sine wave pattern'],ans:1,exp:'Hypokalemia ECG: ST depression, shallow/flat/inverted T waves, prominent U wave. Hyperkalemia ECG: peaked T waves, flat P waves, widened QRS, prolonged PR, sine wave (severe). U wave = hypokalemia mnemonic: "U need more K."'},
     {q:'IV potassium must NEVER be given by IV push because:',opts:['It causes phlebitis at the insertion site','It causes immediate cardiac arrest from cardiac standstill','It crystallizes in the IV tubing','It destroys the peripheral vein'],ans:1,exp:'IV push potassium = IMMEDIATE cardiac arrest. Must always be diluted and given slowly (typically 10 mEq/hr peripherally, max 20 mEq/hr centrally with monitoring). Pharmacy typically premixes. NEVER add potassium to IV bags at the bedside.'},
     {q:'A patient with K+ of 3.0 mEq/L is prescribed oral potassium supplementation. This is preferred over IV because:',opts:['Oral K+ is more effective than IV','Oral is safer — K+ of 3.0 is mild and does not require IV urgency','Oral potassium works faster','IV potassium causes GI upset'],ans:1,exp:'K+ 2.5-3.5 = oral supplementation preferred (safer). K+ <2.5 = IV supplementation needed. Oral K+ takes time but is safer. IV K+ requires careful rate control and monitoring. Always reassess after replacement.'},
-    {q:'Causes of hyperkalemia include all of the following EXCEPT:',opts:['Renal failure','Acidosis','Prolonged diarrhea','ACE inhibitor use'],ans:2,exp:'Diarrhea LOSES potassium → causes HYPOKALEMIA. Hyperkalemia causes: renal failure (can\'t excrete K+), acidosis (H+ enters cells → K+ exits), tissue damage/tumor lysis, K+-sparing diuretics, ACE inhibitors/ARBs, excess K+ intake, Addison\'s disease.'},
-    {q:'Kayexalate and Lokelma both work by:',opts:['Shifting potassium from ECF to ICF','Increasing renal potassium excretion','Binding potassium in the GI tract and eliminating it in feces','Blocking potassium entry into cardiac cells'],ans:2,exp:'Both Kayexalate and Lokelma are cation exchangers — they bind K+ in the GI tract and excrete it in feces. This REMOVES K+ from the body (unlike insulin/dextrose/bicarb which only shift it). Lokelma is newer, more selective, better tolerated, no sorbitol needed.'}
+    {q:'Causes of hyperkalemia include all of the following EXCEPT:',opts:['Renal failure','Acidosis','Prolonged diarrhea','ACE inhibitor use'],ans:2,exp:'Diarrhea LOSES potassium → causes HYPOKALEMIA. Hyperkalemia causes: renal failure (cannot excrete K+), acidosis (H+ enters cells → K+ exits), tissue damage/tumor lysis, K+-sparing diuretics, ACE inhibitors/ARBs, excess K+ intake, Addison\'s disease.'},
+    {q:'Kayexalate and Lokelma both work by:',opts:['Shifting potassium from ECF to ICF','Increasing renal potassium excretion','Binding potassium in the GI tract and eliminating it in feces','Blocking potassium entry into cardiac cells'],ans:2,exp:'Both Kayexalate and Lokelma are cation exchangers — they bind K+ in the GI tract and excrete it in feces. This REMOVES K+ from the body (unlike insulin/dextrose/bicarb which only shift it). Lokelma is newer, more selective, better tolerated, no sorbitol needed.'},
+    {q:'Lokelma is preferred over Kayexalate for hyperkalemia because:',opts:['It is cheaper','Faster onset (1-2 hours), better tolerated, no sorbitol required','Can be given IV','They are equivalent'],ans:1,exp:'Lokelma onset 1-2 hours vs Kayexalate hours to days. Lokelma does NOT require sorbitol (sorbitol caused GI necrosis with old Kayexalate). Both bind K+ in GI tract and remove in stool. Lokelma is now preferred K+ binder.'}
+    ,{q:'After insulin plus dextrose for hyperkalemia, why is a K+ binder also required?',opts:['Insulin permanently destroys potassium','Insulin only temporarily shifts K+ into cells — binder removes K+ from the body','Dextrose removes K+ through kidneys','Binders prevent insulin resistance'],ans:1,exp:'Insulin shifts K+ into cells TEMPORARILY. Total body K+ is unchanged. Without a remover like Kayexalate, Lokelma, or dialysis, K+ shifts back and serum levels rise again. Binders trap K+ in gut and eliminate in stool.'}
   ],
 
   m3_stroke:[
@@ -2572,7 +2726,7 @@ var PS_BANKS={
 
   m3_seizures:[
     {q:'Status epilepticus is defined as:',opts:['Any seizure lasting more than 1 minute','A seizure lasting more than 5 minutes OR two seizures without return to consciousness between them','Three or more seizures in one day','A seizure with loss of bladder control'],ans:1,exp:'Status epilepticus: seizure >5 minutes OR repeated seizures without regaining consciousness between them. Brain damage risk increases with duration. Medical emergency — IV benzodiazepines (lorazepam) first-line, then phenytoin/levetiracetam.'},
-    {q:'During a tonic-clonic seizure, the nurse should:',opts:['Restrain the patient to prevent injury','Hold the patient\'s mouth open to prevent tongue biting','Lower to floor, protect head, loosen clothing, remain with patient, do not restrain','Insert a bite block between the teeth'],ans:2,exp:'Seizure safety: lower to floor, protect head, loosen restrictive clothing, remain with patient, do NOT restrain (causes fractures), do NOT put anything in mouth (causes injury). Turn to side if possible, time the seizure, document behavior throughout.'},
+    {q:'During a tonic-clonic seizure, the nurse should:',opts:['Restrain the patient to prevent injury','Hold the patients mouth open to prevent tongue biting','Lower to floor, protect head, loosen clothing, remain with patient, do not restrain','Insert a bite block between the teeth'],ans:2,exp:'Seizure safety: lower to floor, protect head, loosen restrictive clothing, remain with patient, do NOT restrain (causes fractures), do NOT put anything in mouth (causes injury). Turn to side if possible, time the seizure, document behavior throughout.'},
     {q:'An absence seizure differs from a complex partial seizure in that absence seizures:',opts:['Involve automatisms like lip smacking','Cause loss of consciousness lasting minutes','Are brief (seconds), occur in both hemispheres simultaneously, with no post-ictal confusion','Originate in the temporal lobe and impair consciousness'],ans:2,exp:'Absence: brief seconds, bilateral, no muscle tone change, daydream appearance, IMMEDIATE recovery — no post-ictal confusion. Up to 100×/day. Complex partial: impaired consciousness, automatisms (lip smacking, picking), temporal lobe, post-ictal confusion.'},
     {q:'A patient with a seizure disorder asks about returning to work as a truck driver. The nurse responds:',opts:['You can return as soon as medication is adjusted','You must be seizure-free and cleared by your physician per state law — commercial driving may be permanently restricted','Seizure disorders do not affect driving ability','You can drive during the day when seizures are less likely'],ans:1,exp:'State laws typically require seizure-free period (often 6-12 months minimum) before any driving. Commercial driving (truck, bus) has stricter requirements and may be permanently prohibited. Provider clearance required. Safety is the priority.'},
     {q:'A patient with a seizure disorder should be taught to avoid:',opts:['Exercise and outdoor activities','Sleep deprivation, alcohol, and known seizure triggers','All social activities','Eating before seizures'],ans:1,exp:'Seizure triggers: sleep deprivation (most common), alcohol/drug use, stress, missed medications, flashing lights (photosensitive epilepsy), illness/fever, hormonal changes. Teach: identify personal triggers, medication adherence, safety, medical alert bracelet.'},
@@ -2602,14 +2756,17 @@ var PS_BANKS={
   ],
 
   m4_htn_hf:[
-    {q:'A patient\'s BP is 168/98 after two separate readings. According to JNC guidelines, this is classified as:',opts:['Elevated (prehypertension)','Stage 1 hypertension','Stage 2 hypertension','Hypertensive urgency'],ans:2,exp:'Stage 2 HTN: SBP ≥140 OR DBP ≥90. Stage 1: SBP 130-139 or DBP 80-89. Elevated: SBP 120-129 and DBP <80. Hypertensive urgency: >180/120 without end-organ damage. Hypertensive emergency: >180/120 WITH end-organ damage.'},
+    {q:'A patients BP is 168/98 after two separate readings. According to JNC guidelines, this is classified as:',opts:['Elevated (prehypertension)','Stage 1 hypertension','Stage 2 hypertension','Hypertensive urgency'],ans:2,exp:'Stage 2 HTN: SBP ≥140 OR DBP ≥90. Stage 1: SBP 130-139 or DBP 80-89. Elevated: SBP 120-129 and DBP <80. Hypertensive urgency: >180/120 without end-organ damage. Hypertensive emergency: >180/120 WITH end-organ damage.'},
     {q:'The most common type of hypertension (90-95% of cases) is:',opts:['Secondary hypertension from renal disease','Primary (essential) hypertension with no identifiable cause','Malignant hypertension','White coat hypertension'],ans:1,exp:'Primary (essential) HTN: 90-95% of cases. No single identifiable cause — multifactorial: genetics, age, diet (high sodium), obesity, inactivity, stress. Secondary HTN: identifiable cause (renal disease, hyperaldosteronism, sleep apnea, medications).'},
     {q:'Left ventricular hypertrophy from chronic hypertension can lead to:',opts:['Increased cardiac output long-term','Diastolic dysfunction, heart failure, and arrhythmias','Decreased peripheral resistance','Reduced stroke volume acutely followed by permanent improvement'],ans:1,exp:'LVH: heart compensates for high afterload by thickening. Short-term: maintains output. Long-term: stiff non-compliant ventricle → diastolic dysfunction (HFpEF) → impaired filling → HF. Also: arrhythmias (especially AFib), increased ischemia risk. Detected on ECG (voltage criteria) and echo.'},
     {q:'A patient with systolic heart failure (HFrEF) has an ejection fraction of 35%. The underlying problem is:',opts:['The ventricle cannot relax or fill properly','The ventricle cannot contract forcefully enough to eject adequate blood volume','Excess fluid in the pericardial sac','The heart valves are regurgitating'],ans:1,exp:'HFrEF (reduced EF <40%): systolic dysfunction — the ventricle CONTRACTS but ineffectively. Low CO → baroreceptors activate SNS → compensatory HR increase and vasoconstriction → worsens over time → ventricular dilation. BNP elevated as heart tries to compensate.'},
     {q:'Signs of right-sided heart failure include:',opts:['Pulmonary crackles, pink frothy sputum, and orthopnea','JVD, peripheral pitting edema, ascites, and hepatomegaly','S3 gallop and pulmonary edema','Cough and exertional dyspnea only'],ans:1,exp:'Right HF: blood backs up into body (systemic veins). Signs: JVD, peripheral edema (ankles, sacrum), ascites, hepatomegaly, weight gain. Left HF: blood backs up into lungs. Signs: crackles, orthopnea, PND, pink frothy sputum, S3, low SpO2.'},
     {q:'Hypertensive urgency (BP >180/120) differs from hypertensive emergency in that urgency:',opts:['Requires immediate IV antihypertensives in the ICU','Has no evidence of immediate end-organ damage — BP lowered gradually over 24-48 hours with oral medications','Is always asymptomatic','Requires emergent dialysis'],ans:1,exp:'Urgency: BP >180/120, NO end-organ damage. Oral antihypertensives, lower BP over 24-48 hours. Emergency: BP >180/120 WITH end-organ damage (stroke, MI, aortic dissection, acute kidney injury, hypertensive encephalopathy) — IV meds, ICU, lower BP 20-25% in first hour.'},
     {q:'Non-pharmacological interventions for hypertension include all of the following EXCEPT:',opts:['Sodium restriction to 2g/day','Weight reduction','Daily aspirin regardless of cardiovascular history','Regular aerobic exercise and smoking cessation'],ans:2,exp:'Aspirin is NOT a standard non-pharm HTN intervention. Non-pharm: weight reduction, sodium restriction (2g/day), DASH diet, exercise, smoking cessation, limit alcohol, stress reduction, regular BP monitoring. These alone may control Stage 1 HTN for 1-3 months before medication.'},
-    {q:'BNP (B-type natriuretic peptide) is elevated in heart failure because:',opts:['The kidneys release it in response to hypovolemia','The ventricles release it in response to increased wall stress from volume overload','It is released by the liver during cardiac inflammation','It reflects cardiac enzyme leak from myocardial damage'],ans:1,exp:'BNP is released by ventricular myocytes in response to increased wall stress/volume overload. Elevated BNP confirms HF diagnosis and correlates with severity. Used to differentiate cardiac from pulmonary causes of dyspnea. Elevated with decompensation; decreases with effective treatment.'}
+    {q:'BNP (B-type natriuretic peptide) is elevated in heart failure because:',opts:['The kidneys release it in response to hypovolemia','The ventricles release it in response to increased wall stress from volume overload','It is released by the liver during cardiac inflammation','It reflects cardiac enzyme leak from myocardial damage'],ans:1,exp:'BNP is released by ventricular myocytes in response to increased wall stress/volume overload. Elevated BNP confirms HF diagnosis and correlates with severity. Used to differentiate cardiac from pulmonary causes of dyspnea. Elevated with decompensation; decreases with effective treatment.'},
+    {q:'Which lab is most specific for diagnosing and monitoring heart failure?',opts:['Troponin','BNP (B-type natriuretic peptide)','Serum creatinine','CBC'],ans:1,exp:'BNP is released when ventricular walls are under stretch and stress. Elevated BNP = ventricular wall stress = HF. Used to diagnose, assess severity, and monitor treatment response. Key HF lab to know.'}
+    ,{q:'Cool extremities, confusion, UO 18 mL per hour, and BP 84/60 in HF indicates:',opts:['Pulmonary congestion','Low cardiac output or cardiogenic shock from poor forward flow','Hypovolemia from diuretics','Septic shock'],ans:1,exp:'Cool extremities plus confusion plus low UO plus hypotension = low cardiac output. The pump is failing to push blood forward. Different from congestion signs (crackles, JVD, edema). Both can coexist. Requires urgent intervention.'}
+    ,{q:'Echo shows EF 35%. The correct drug classes for this HF type are:',opts:['Diuretics only','ACE inhibitor, beta-blocker, aldosterone antagonist, and SGLT2 inhibitor','ACE inhibitor and digoxin only','Calcium channel blockers and digoxin'],ans:1,exp:'EF below 40% = HFrEF. The four evidence-based classes that reduce mortality are ACE-I (or ARB or ARNI), beta-blocker, aldosterone antagonist (spironolactone), and SGLT2 inhibitor. Only these are proven to change outcomes in HFrEF.'}
   ],
 
   m4_cad:[
@@ -2628,12 +2785,14 @@ var PS_BANKS={
     {q:'Raynaud\'s phenomenon causes color changes in what sequence?',opts:['Red → white → blue','White (blanching) → blue (cyanosis during spasm) → red (when blood returns)','Blue → white → red','Red → blue only'],ans:1,exp:'Raynaud\'s: vasospasm of arterioles → (1) White: blanching from vasoconstriction; (2) Blue: cyanosis from stasis; (3) Red: reactive hyperemia when vasospasm releases. Triggered by cold, stress. Treatment: avoid triggers, warm clothing, CCBs (amlodipine), smoking cessation.'},
     {q:'A patient with PAD asks about exercise. The nurse advises:',opts:['Complete bed rest to protect the limbs','Walk to the point of claudication, rest until pain resolves, then walk again — progressive walking improves collateral circulation','Only swimming to avoid leg pressure','No exercise — claudication pain means the body needs rest'],ans:1,exp:'PAD exercise therapy: walk → claudication → REST → walk again. Progressive walking improves collateral circulation and walking distance over weeks. Also: no elevation above heart, no crossing legs, no cold exposure, no caffeine/tobacco, no direct heat to limbs, daily foot inspection.'},
     {q:'The ankle-brachial index (ABI) is calculated by:',opts:['Dividing brachial SBP by ankle SBP','Dividing ankle SBP by brachial SBP — normal 0.8-1.3','Subtracting ankle DBP from brachial SBP','Dividing ankle pulse rate by brachial pulse rate'],ans:1,exp:'ABI = ankle SBP ÷ brachial SBP. Normal: 0.8-1.3. <0.8 = arterial insufficiency (PAD). <0.5 = severe PAD/critical limb ischemia. >1.3 = non-compressible calcified vessels (unreliable — common in diabetes and renal disease). Used to assess arterial disease severity and guide treatment.'},
-    {q:'Nursing intervention for venous insufficiency includes:',opts:['Keep legs in dependent position to improve arterial flow','Elevate legs above heart level, compression stockings, avoid prolonged standing/sitting, and SCDs','Apply heat to improve circulation','Encourage jogging but avoid walking'],ans:1,exp:'Venous insufficiency: venous blood pools → edema, skin changes, ulcers. Nursing: elevate legs above heart (10-20 min q few hours), compression stockings (check ABI first — lifelong), avoid prolonged sitting/standing, avoid crossing legs/constrictive clothing, SCDs, daily skin inspection.'}
+    {q:'Nursing intervention for venous insufficiency includes:',opts:['Keep legs in dependent position to improve arterial flow','Elevate legs above heart level, compression stockings, avoid prolonged standing/sitting, and SCDs','Apply heat to improve circulation','Encourage jogging but avoid walking'],ans:1,exp:'Venous insufficiency: venous blood pools → edema, skin changes, ulcers. Nursing: elevate legs above heart (10-20 min q few hours), compression stockings (check ABI first — lifelong), avoid prolonged sitting/standing, avoid crossing legs/constrictive clothing, SCDs, daily skin inspection.'},
+    {q:'Cilostazol (Pletal) for PAD is contraindicated in:',opts:['Hypertension','Any degree of heart failure','Renal failure','Atrial fibrillation'],ans:1,exp:'Cilostazol is a PDE III inhibitor. This class increases mortality in heart failure. Despite improving PAD claudication walking distance by about 50%, it cannot be given to patients with any HF. Screen all PAD patients for HF before prescribing.'}
+    ,{q:'Why do elderly patients develop isolated systolic hypertension?',opts:['Excess dietary sodium','Age-related vessel wall stiffening increases peripheral resistance raising systolic while diastolic stays normal','Renal artery stenosis','Increased cardiac output'],ans:1,exp:'Aging stiffens vessel walls and removes elasticity. Stiff vessels cannot expand with each heartbeat, so systolic rises while diastolic stays normal or falls. This increases LV afterload and is the most common HTN pattern in elderly patients.'}
   ],
 
   m4_extra_vascular:[
     {q:'Lymphedema differs from venous edema in that lymphedema:',opts:['Pits with pressure and improves with elevation overnight','Is non-pitting, does not significantly improve with elevation, and is caused by lymphatic obstruction','Only affects the upper extremities','Is always bilateral'],ans:1,exp:'Lymphedema: lymphatic vessel obstruction → protein-rich fluid accumulates → non-pitting edema. Does NOT significantly improve with elevation (unlike venous edema which does). Progressive fibrosis over time. Treatment: manual lymphatic drainage, compression, physiotherapy, skin care.'},
-    {q:'PAD nursing interventions to protect the limb include:',opts:['Apply heating pad to improve circulation','Never apply direct heat, daily foot hygiene/inspection, Rooke boots, avoid crossing legs, avoid cold and caffeine','Elevate legs above heart level','Apply ice packs for 20 minutes to reduce pain'],ans:1,exp:'PAD limb protection: NEVER direct heat (can\'t sense temperature → burns), daily foot inspection (small wounds → gangrene if missed), Rooke boots to offload pressure, no crossing legs (compresses arteries), avoid cold (vasoconstriction), no caffeine/tobacco (vasoconstrictors).'},
+    {q:'PAD nursing interventions to protect the limb include:',opts:['Apply heating pad to improve circulation','Never apply direct heat, daily foot hygiene/inspection, Rooke boots, avoid crossing legs, avoid cold and caffeine','Elevate legs above heart level','Apply ice packs for 20 minutes to reduce pain'],ans:1,exp:'PAD limb protection: NEVER direct heat (cannot sense temperature → burns), daily foot inspection (small wounds → gangrene if missed), Rooke boots to offload pressure, no crossing legs (compresses arteries), avoid cold (vasoconstriction), no caffeine/tobacco (vasoconstrictors).'},
     {q:'Which vascular diagnostic test is performed first to assess suspected DVT?',opts:['CT angiography','Duplex Doppler ultrasound','MRA (magnetic resonance angiography)','Venography (contrast)'],ans:1,exp:'Duplex Doppler ultrasound is the first-line test for DVT — non-invasive, highly accurate, no radiation/contrast. Also used for arterial and venous flow assessment. ABI with Doppler for PAD. Arteriography (gold standard) is invasive; used when intervention is planned.'},
     {q:'A patient with PAD has an ABI of 0.45. This indicates:',opts:['Normal arterial flow','Mild PAD','Severe PAD or critical limb ischemia — at risk for amputation','Non-compressible vessels from calcification'],ans:2,exp:'ABI interpretation: >1.3 = calcified (unreliable); 0.9-1.3 = normal; 0.7-0.9 = mild PAD; 0.5-0.7 = moderate PAD; <0.5 = severe PAD/critical limb ischemia. ABI <0.5 = rest pain, tissue loss, gangrene risk, urgent revascularization evaluation needed.'},
     {q:'Which surgical intervention is used for significant carotid artery stenosis to prevent stroke?',opts:['Coronary artery bypass graft (CABG)','Carotid endarterectomy (CEA)','Peripheral angioplasty','Femoral-popliteal bypass'],ans:1,exp:'Carotid endarterectomy (CEA): surgical removal of atherosclerotic plaque from carotid artery to prevent embolic stroke. Post-op monitoring: stroke symptoms (sudden weakness/speech changes), cranial nerve deficits (VII, X, XII), hematoma compressing airway, blood pressure lability.'},
