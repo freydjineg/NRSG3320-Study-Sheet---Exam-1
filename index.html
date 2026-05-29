@@ -175,40 +175,6 @@ body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--tx);min-heig
 .score-box{background:var(--bg2);border-radius:8px;padding:.5rem .9rem;text-align:center}
 
 /* ── PIT STOP ── */
-.ps-trigger{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;background:linear-gradient(135deg,#fce8d0,#f5c890);border:1.5px solid var(--bdr);border-radius:24px;cursor:pointer;font-family:'Lato',sans-serif;font-size:.88rem;font-weight:700;color:var(--ord);transition:all .18s;box-shadow:0 2px 8px rgba(139,62,8,.12)}
-.ps-trigger:hover{background:linear-gradient(135deg,#f5c890,#e8a060);border-color:var(--or)}
-#psModalBg{display:none;position:fixed;inset:0;background:rgba(45,26,8,.55);z-index:9999;align-items:center;justify-content:center;padding:1rem}
-#psModalBg.pso{display:flex}
-#psModal{background:var(--card);border-radius:16px;width:100%;max-width:640px;max-height:90vh;overflow-y:auto;box-shadow:0 8px 40px rgba(0,0,0,.35)}
-.ps-hdr{padding:1.2rem 1.4rem .8rem;border-bottom:1px solid var(--bdr);display:flex;align-items:center;justify-content:space-between}
-.ps-hdr h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--ord)}
-.ps-cls{background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--tx3);padding:4px 8px;border-radius:6px}
-.ps-cls:hover{background:var(--bg2)}
-.ps-body{padding:1rem 1.4rem}
-.ps-pips{display:flex;gap:6px;margin-bottom:1rem;flex-wrap:wrap}
-.ps-pip{width:12px;height:12px;border-radius:50%;background:var(--bg2);border:2px solid var(--bdr);transition:all .2s}
-.ps-pip.done-ok{background:var(--ok);border-color:var(--ok)}
-.ps-pip.done-ng{background:var(--er);border-color:var(--er)}
-.ps-pip.active{background:var(--or);border-color:var(--or)}
-#psContent .ps-q{font-size:.97rem;font-weight:700;color:var(--tx);margin-bottom:.9rem;line-height:1.5}
-#psContent .ps-opts{list-style:none;display:flex;flex-direction:column;gap:.5rem;margin-bottom:.8rem}
-#psContent .pso-btn{padding:10px 14px;border:1.5px solid var(--bdr);border-radius:8px;cursor:pointer;font-size:.9rem;color:var(--tx2);background:var(--bg);transition:all .14s;text-align:left;display:flex;gap:8px;font-family:'Lato',sans-serif;align-items:flex-start;width:100%}
-#psContent .pso-btn:hover:not([disabled]){border-color:var(--orl);background:#fff5ee}
-#psContent .pso-btn.corr{border-color:var(--ok);background:var(--okb);cursor:default}
-#psContent .pso-btn.wrng{border-color:var(--er);background:var(--erb);cursor:default}
-#psContent .pso-ltr{font-weight:700;color:var(--tx3);min-width:20px}
-#psContent .ps-fb{padding:.8rem 1rem;border-radius:8px;font-size:.88rem;line-height:1.6;margin-top:.5rem;display:none}
-#psContent .ps-fb.show{display:block}
-#psContent .ps-fb.ok{background:var(--okb);border:1px solid var(--ok);color:#1a4a1a}
-#psContent .ps-fb.bad{background:var(--erb);border:1px solid var(--er);color:#4a1a1a}
-.ps-nxtb{display:block;width:100%;padding:10px;background:var(--or);color:#fff;border:none;border-radius:8px;font-size:.9rem;font-weight:700;cursor:pointer;margin-top:.8rem;font-family:'Lato',sans-serif;transition:background .15s}
-.ps-nxtb:hover{background:var(--ord)}
-.ps-done{text-align:center;padding:1rem}
-.ps-ftr{padding:0 1.4rem .9rem}
-.ps-skb{background:none;border:none;color:var(--tx3);font-size:.85rem;cursor:pointer;text-decoration:underline;font-family:'Lato',sans-serif}
-
-/* ── MODULE COLOR ACCENTS ── */
-[data-mod="1"]{border-left-color:var(--m1)!important}
 [data-mod="2"]{border-left-color:var(--m2)!important}
 [data-mod="3"]{border-left-color:var(--m3)!important}
 [data-mod="4"]{border-left-color:var(--m4)!important}
@@ -261,6 +227,58 @@ body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--tx);min-heig
 .dtbl tr:hover td:first-child{background:#fff5ee}
 /* Module header rows — sticky first cell spans all */
 .dtbl tr.drug-mod-hdr td{position:static}
+
+/* ── PIT STOP REDESIGN ── */
+.ps-trigger{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:linear-gradient(135deg,#fce8d0,#f5c890);border:1.5px solid var(--bdr);border-radius:24px;cursor:pointer;font-family:"Lato",sans-serif;font-size:.88rem;font-weight:700;color:var(--ord);transition:all .18s;box-shadow:0 2px 8px rgba(139,62,8,.12)}
+.ps-trigger:hover{background:linear-gradient(135deg,#f5c890,#e8a060);border-color:var(--or);box-shadow:0 4px 14px rgba(139,62,8,.2);transform:translateY(-1px)}
+#psModalBg{display:none;position:fixed;inset:0;background:rgba(20,10,2,.6);z-index:9999;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(3px)}
+#psModalBg.pso{display:flex}
+#psModal{background:#fffaf4;border-radius:20px;width:100%;max-width:600px;max-height:92vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 24px 64px rgba(0,0,0,.28);border:1px solid var(--bdr)}
+.ps-mhdr{background:linear-gradient(135deg,var(--ord),#c2621a);padding:.8rem 1.2rem;display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-shrink:0}
+.ps-hdr-left{display:flex;align-items:center;gap:.9rem}
+.ps-flag{font-size:1.4rem;line-height:1}
+.ps-mtitle{font-family:"Playfair Display",serif;font-size:1.05rem;font-weight:700;color:#fff;line-height:1.2}
+.ps-msub{font-size:.72rem;color:rgba(255,255,255,.75);margin-top:1px}
+.ps-cls{background:rgba(255,255,255,.15);border:none;color:#fff;font-size:1.2rem;cursor:pointer;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .15s;flex-shrink:0;line-height:1}
+.ps-cls:hover{background:rgba(255,255,255,.3)}
+.ps-prog-strip{height:4px;background:rgba(255,255,255,.2);flex-shrink:0}
+.ps-prog-fill{height:100%;background:#fff;border-radius:0 2px 2px 0;transition:width .35s ease}
+.ps-pip-row{display:flex;gap:5px;padding:.8rem 1.3rem .4rem;flex-shrink:0;align-items:center}
+.ps-pip{flex:1;height:5px;border-radius:3px;background:var(--bg2);transition:background .2s}
+.ps-pip.ok{background:var(--ok)}
+.ps-pip.ng{background:var(--er)}
+.ps-pip.cur{background:var(--or)}
+.ps-mbody{overflow-y:auto;flex:1;padding:.9rem 1.3rem 1.1rem}
+.ps-qnum{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--or);margin-bottom:.4rem}
+.ps-q{font-size:.98rem;font-weight:700;color:var(--tx);line-height:1.6;margin-bottom:.9rem}
+.ps-opt{width:100%;padding:10px 13px;border:1.5px solid var(--bdr);border-radius:10px;cursor:pointer;font-size:.88rem;color:var(--tx2);background:#fff;transition:all .14s;display:flex;gap:10px;align-items:flex-start;text-align:left;font-family:"Lato",sans-serif;margin-bottom:.4rem;line-height:1.5}
+.ps-opt:hover:not([disabled]){border-color:var(--orl);background:#fff8f2;transform:translateX(3px)}
+.ps-opt-ltr{font-weight:800;color:var(--or);min-width:18px;font-size:.85rem;flex-shrink:0;margin-top:1px}
+.ps-opt.corr{border-color:var(--ok);background:var(--okb);cursor:default;transform:none}
+.ps-opt.corr .ps-opt-ltr{color:var(--ok)}
+.ps-opt.wrng{border-color:var(--er);background:var(--erb);cursor:default;transform:none}
+.ps-opt.wrng .ps-opt-ltr{color:var(--er)}
+.ps-opt[disabled]{cursor:default;transform:none}
+.ps-fb{border-radius:10px;padding:.8rem 1rem;font-size:.86rem;line-height:1.65;margin-top:.6rem;display:none}
+.ps-fb.show{display:block}
+.ps-fb.ok{background:var(--okb);border:1px solid var(--ok);color:#1a4a1a}
+.ps-fb.bad{background:var(--erb);border:1px solid var(--er);color:#4a1a1a}
+.ps-nav{display:flex;align-items:center;justify-content:space-between;margin-top:.9rem;padding-top:.8rem;border-top:1px solid var(--bdr)}
+.ps-scl{font-size:.82rem;font-weight:700;color:var(--tx3)}
+.ps-nxtb{padding:9px 22px;background:var(--or);color:#fff;border:none;border-radius:8px;font-size:.88rem;font-weight:700;cursor:pointer;font-family:"Lato",sans-serif;transition:background .15s;display:none}
+.ps-nxtb:hover{background:var(--ord)}
+.ps-done{text-align:center;padding:1.5rem 1rem}
+.ps-stars{font-size:2.4rem;margin-bottom:.6rem}
+.ps-dscore{font-family:"Playfair Display",serif;font-size:1.5rem;font-weight:700;color:var(--ord);margin-bottom:.4rem}
+.ps-dmsg{font-size:.9rem;color:var(--tx2);margin-bottom:1.2rem;line-height:1.6}
+.ps-ulb{padding:10px 28px;background:var(--or);color:#fff;border:none;border-radius:10px;font-size:.9rem;font-weight:700;cursor:pointer;font-family:"Lato",sans-serif;transition:background .15s}
+.ps-ulb:hover{background:var(--ord)}
+.ps-ftr{padding:.55rem 1.3rem .8rem;text-align:center;border-top:1px solid var(--bdr);flex-shrink:0}
+.ps-skb{background:none;border:none;color:var(--tx3);font-size:.8rem;cursor:pointer;font-family:"Lato",sans-serif;opacity:.6;transition:opacity .15s}
+.ps-skb:hover{opacity:1;text-decoration:underline}
+/* Nurse avatar drop shadow in header */
+.ps-mhdr svg{filter:drop-shadow(0 2px 6px rgba(0,0,0,.25))}
+
 </style>
 </head>
 <body>
@@ -1755,7 +1773,7 @@ body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--tx);min-heig
     <h2>&#x1F4A1; Mnemonics &amp; Memory Tricks</h2>
     <p class="tagline">Your brain remembers stories and patterns way better than facts. These memory hooks will stick with you into the exam room.</p>
   </div>
-  <div style="text-align:center;margin:.8rem 0 .2rem"><button class="ps-trigger" data-pskey="m4_extra_vascular" onclick="psGo(this)">&#x1F3C1; Pit Stop &mdash; test yourself here!</button></div>
+  
 
   <div class="section"><h3>&#x1F52A; Module 1: Perioperative Care</h3>
     <div class="mnem-card">
@@ -1899,12 +1917,9 @@ body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--tx);min-heig
         <p class="mnem-exp"><span>Arterial</span>: <span>T</span>oes, pressure points. <span>P</span>ainful. <span>P</span>ale/cool skin. <span>P</span>ulse absent. "Three P's of Arterial!"<br><span>Venous</span>: <span>M</span>edial ankle. <span>M</span>ild pain. <span>M</span>oist/weepy wound. Brown skin. "Three M's of Venous!"<br>Treatment: Arterial = revascularize, NO compression. Venous = compression (after checking ABI!).</p>
       </div>
     </div>
-  </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════ DRUG TABLE ══ -->
-
-<!-- ════════════════════════════════════════════════════ DRUG TABLE ══ -->
+</div>
 
 <!-- ================================================ DRUG TABLE -->
 
@@ -1933,20 +1948,7 @@ body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--tx);min-heig
 </div>
 </div>
 
-<div id="psModalBg">
-  <div id="psModal">
-    <div class="ps-mhdr">
-      <div class="ps-badge"><span>&#x1F3C1; Pit Stop</span></div>
-      <div class="ps-mtitle">Quick Knowledge Check</div>
-      <div class="ps-msub">5 questions from this section</div>
-    </div>
-    <div class="ps-mbody">
-      <div class="ps-pips" id="psPips"></div>
-      <div id="psContent"></div>
-    </div>
-    <div class="ps-ftr"><button class="ps-skb" id="psSkip">Skip for now</button></div>
-  </div>
-</div>
+
 
 <script>
 
@@ -2809,7 +2811,7 @@ window.psGo=function(btn){
   if(_psOpen)return;
   var key=btn.getAttribute('data-pskey');
   if(!key||!PS_BANKS[key]){return;}
-  _psCurBtn=btn;_psOpen=true;_psIdx=0;_psScore=0;_psAnswered=false;
+  _psCurBtn=btn;_psOpen=true;_psIdx=0;_psScore=0;_psAnswered=false;window._psResults=[];
   _psQs=sh(PS_BANKS[key].slice()).slice(0,5);
   document.getElementById('psModalBg').classList.add('pso');
   document.body.style.overflow='hidden';
@@ -2819,12 +2821,16 @@ window.psGo=function(btn){
 function psRenderQ(){
   var c=document.getElementById('psContent');
   if(!c)return;
+  var pct=Math.round((_psIdx/_psQs.length)*100);
+  var fill=document.getElementById('psProgFill');
+  if(fill)fill.style.width=pct+'%';
   if(_psIdx>=_psQs.length){
-    document.getElementById('psPips').innerHTML='';
+    var fill2=document.getElementById('psProgFill');if(fill2)fill2.style.width='100%';
     var ftr=document.querySelector('.ps-ftr');if(ftr)ftr.style.display='none';
-    var s=_psScore===5?'\u2b50\u2b50\u2b50':_psScore>=3?'\u2b50\u2b50':'\u2b50';
-    var msg=_psScore===_psQs.length?'Perfect! Every one correct.':_psScore>=3?'Good work \u2014 review what you missed.':'Take another look at that section.';
-    c.innerHTML='<div class="ps-done"><div class="ps-stars">'+s+'</div><div class="ps-dscore">'+_psScore+' / '+_psQs.length+' correct</div><p class="ps-dmsg">'+msg+'</p><button class="ps-ulb" onclick="psClose(false)">Keep studying</button></div>';
+    document.getElementById('psPips').innerHTML='';
+    var emoji=_psScore===_psQs.length?'\uD83C\uDFC6':_psScore>=3?'\uD83C\uDF1F':'\uD83D\uDCCB';
+    var msg=_psScore===_psQs.length?'Perfect score! Excellent work.':_psScore>=3?'Good work \u2014 review any you missed.':'Take another look at that section.';
+    c.innerHTML='<div class="ps-done"><div class="ps-stars">'+emoji+'</div><div class="ps-dscore">'+_psScore+' / '+_psQs.length+' correct</div><p class="ps-dmsg">'+msg+'</p><button class="ps-ulb" onclick="psClose(false)">Back to studying</button></div>';
     return;
   }
   _psAnswered=false;
@@ -2837,34 +2843,49 @@ function psRenderQ(){
   window._psCorrectText=opts[q.ans];
   var L='ABCDE',oh='';
   window._psShuffled.forEach(function(opt,i){
-    oh+='<button class="ps-opt" onclick="psAns('+i+')">'+L[i]+'. '+opt+'</button>';
+    oh+='<button class="ps-opt" onclick="psAns('+i+')"><span class="ps-opt-ltr">'+L[i]+'.</span><span>'+opt+'</span></button>';
   });
-  c.innerHTML='<div class="ps-q">Q'+(_psIdx+1)+' of '+_psQs.length+': '+q.q+'</div><div class="ps-opts">'+oh+'</div><div class="ps-fb" id="psFb"></div><div class="ps-nav"><span class="ps-scl">Score: '+_psScore+'/'+_psIdx+'</span><button class="ps-nxtb" id="psNxt" onclick="psNext()" style="display:none">Next &rarr;</button></div>';
+  c.innerHTML='<div class="ps-qnum">Question '+(_psIdx+1)+' of '+_psQs.length+'</div><div class="ps-q">'+q.q+'</div><div>'+oh+'</div><div class="ps-fb" id="psFb"></div><div class="ps-nav"><span class="ps-scl">Score: '+_psScore+'/'+_psIdx+'</span><button class="ps-nxtb" id="psNxt" onclick="psNext()">Next \u2192</button></div>';
 }
 
 function psPips(){
-  var el=document.getElementById('psPips');if(!el)return;
+  var el=document.getElementById('psPips');
+  if(!el)return;
   var h='';
-  for(var i=0;i<_psQs.length;i++){h+='<div class="ps-pip'+(i<_psIdx?' done':i===_psIdx?' active':'')+'"></div>';}
-  h+='<span class="ps-piplbl">'+(_psIdx+1)+'/'+_psQs.length+'</span>';
+  for(var i=0;i<_psQs.length;i++){
+    var cls='ps-pip';
+    if(i<_psIdx) cls+=(window._psResults&&window._psResults[i]?' ok':' ng');
+    else if(i===_psIdx) cls+=' cur';
+    h+='<div class="'+cls+'"></div>';
+  }
   el.innerHTML=h;
 }
 
-window.psAns=function(i){
-  if(_psAnswered)return;_psAnswered=true;
-  var chosen=window._psShuffled[i];
-  var correct=(chosen===window._psCorrectText);
+window.psAns=function(idx){
+  if(_psAnswered)return;
+  _psAnswered=true;
+  var correct=(window._psShuffled[idx]===window._psCorrectText);
   if(correct)_psScore++;
-  document.querySelectorAll('.ps-opt').forEach(function(b,j){
-    b.classList.add('dis');
-    if(window._psShuffled[j]===window._psCorrectText)b.classList.add('psc');
-    else if(j===i&&!correct)b.classList.add('psw');
+  if(!window._psResults)window._psResults=[];
+  window._psResults[_psIdx]=correct;
+  var btns=document.querySelectorAll('.ps-opt');
+  btns.forEach(function(b,i){
+    b.setAttribute('disabled','true');
+    if(window._psShuffled[i]===window._psCorrectText) b.classList.add('corr');
+    else if(i===idx&&!correct) b.classList.add('wrng');
   });
-  var q=_psQs[_psIdx];
   var fb=document.getElementById('psFb');
-  if(fb){fb.className='ps-fb show '+(correct?'fgg':'fgb');fb.textContent=(correct?'\u2705 Correct! ':'\u274c Wrong. ')+q.exp;}
-  var nx=document.getElementById('psNxt');if(nx)nx.style.display='inline-block';
-};
+  var q=_psQs[_psIdx];
+  if(fb){
+    fb.className='ps-fb show '+(correct?'ok':'bad');
+    fb.innerHTML=(correct?'<strong>\u2705 Correct!</strong> ':'<strong>\u274C Incorrect.</strong> ')+q.exp;
+  }
+  var nxt=document.getElementById('psNxt');
+  if(nxt) nxt.style.display='inline-block';
+  var scl=document.querySelector('.ps-scl');
+  if(scl) scl.textContent='Score: '+_psScore+'/'+(_psIdx+1);
+  psPips();
+}
 
 window.psNext=function(){_psIdx++;psRenderQ();};
 
@@ -2886,5 +2907,51 @@ document.addEventListener('DOMContentLoaded',function(){
 
 </script>
 
+<div id="psModalBg">
+  <div id="psModal">
+    <div class="ps-mhdr">
+      <div class="ps-hdr-left">
+        <svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" style="width:72px;height:72px;flex-shrink:0">
+  <path d="M10 90 Q10 62 40 58 Q70 62 70 90Z" fill="#4a7cbf"/>
+  <rect x="26" y="68" width="14" height="10" rx="2" fill="#3a6aaf" opacity=".7"/>
+  <rect x="34" y="50" width="12" height="10" rx="5" fill="#e8b88a"/>
+  <circle cx="40" cy="38" r="18" fill="#e8b88a"/>
+  <path d="M22 35 Q22 18 40 18 Q58 18 58 35 Q56 24 40 23 Q24 24 22 35Z" fill="#5a3010"/>
+  <ellipse cx="40" cy="20" rx="9" ry="6" fill="#5a3010"/>
+  <ellipse cx="34" cy="36" rx="3" ry="3.5" fill="#fff"/>
+  <ellipse cx="46" cy="36" rx="3" ry="3.5" fill="#fff"/>
+  <circle cx="34.5" cy="36.5" r="2" fill="#3a2010"/>
+  <circle cx="46.5" cy="36.5" r="2" fill="#3a2010"/>
+  <circle cx="35.5" cy="35.5" r=".7" fill="#fff"/>
+  <circle cx="47.5" cy="35.5" r=".7" fill="#fff"/>
+  <path d="M30 31.5 Q34 29.5 38 31" fill="none" stroke="#5a3010" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M42 31 Q46 29.5 50 31.5" fill="none" stroke="#5a3010" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M38.5 40 Q40 43 41.5 40" fill="none" stroke="#c4845a" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M33 45 Q40 50 47 45" fill="none" stroke="#c47050" stroke-width="1.8" stroke-linecap="round"/>
+  <ellipse cx="30" cy="44" rx="4" ry="2.5" fill="#e88a8a" opacity=".35"/>
+  <ellipse cx="50" cy="44" rx="4" ry="2.5" fill="#e88a8a" opacity=".35"/>
+  <rect x="26" y="17" width="28" height="8" rx="2" fill="#fff" stroke="#ddd" stroke-width=".5"/>
+  <rect x="37.5" y="18" width="5" height="2" rx=".5" fill="#e83a3a"/>
+  <rect x="39.5" y="17" width="2" height="5" rx=".5" fill="#e83a3a"/>
+  <path d="M32 58 Q28 65 30 72 Q32 78 36 78 Q40 78 41 74" fill="none" stroke="#2a2a3a" stroke-width="2" stroke-linecap="round"/>
+  <path d="M48 58 Q52 65 50 72 Q48 78 44 78 Q40 78 41 74" fill="none" stroke="#2a2a3a" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="41" cy="75" r="4" fill="#2a2a3a"/>
+  <circle cx="41" cy="75" r="2.5" fill="#555"/>
+  <circle cx="28" cy="57" r="2.5" fill="#3a3a4a"/>
+  <circle cx="52" cy="57" r="2.5" fill="#3a3a4a"/>
+</svg>
+        <div>
+          <div class="ps-mtitle">Pit Stop</div>
+          <div class="ps-msub">Quick Knowledge Check &mdash; 5 Questions</div>
+        </div>
+      </div>
+      <button class="ps-cls" onclick="psClose()" title="Close">&times;</button>
+    </div>
+    <div class="ps-prog-strip"><div class="ps-prog-fill" id="psProgFill" style="width:0%"></div></div>
+    <div class="ps-pip-row" id="psPips"></div>
+    <div class="ps-mbody"><div id="psContent"></div></div>
+    <div class="ps-ftr"><button class="ps-skb" id="psSkip">Skip for now</button></div>
+  </div>
+</div
 </body>
 </html>
