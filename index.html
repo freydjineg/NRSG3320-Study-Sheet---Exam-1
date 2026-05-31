@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+  
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -278,6 +279,41 @@ body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--tx);min-heig
 .ps-skb:hover{opacity:1;text-decoration:underline}
 /* Nurse avatar drop shadow in header */
 .ps-mhdr svg{filter:drop-shadow(0 2px 6px rgba(0,0,0,.25))}
+.drugfc-card{background:var(--card);border:1.5px solid var(--bdr);border-radius:14px;padding:1.4rem;cursor:pointer;min-height:170px;transition:box-shadow .2s;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.drugfc-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.12)}
+.drugfc-front{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:130px;gap:.5rem}
+.drugfc-mod{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#fff;padding:2px 10px;border-radius:10px}
+.drugfc-name{font-family:"Playfair Display",serif;font-size:1.3rem;font-weight:700;color:var(--ord)}
+.drugfc-plain{font-size:.88rem;color:var(--tx2);font-style:italic;max-width:420px}
+.drugfc-hint{font-size:.75rem;color:var(--tx3);margin-top:.4rem}
+.drugfc-row{display:grid;grid-template-columns:120px 1fr;gap:.3rem .8rem;padding:.45rem 0;border-bottom:1px solid var(--bg2);font-size:.87rem;line-height:1.55;color:var(--tx2)}
+.drugfc-row:last-child{border-bottom:none}
+.drugfc-lbl{font-weight:700;color:var(--tx);font-size:.8rem}
+.drugfc-antidote{background:#fff3e8;border-radius:6px;padding:.45rem .5rem;margin:0 -.5rem;border:1px solid #e8c090}
+.drugfc-antidote .drugfc-lbl{color:var(--or)}
+/* ── DRUG CHALLENGE ── */
+.dc-card{background:var(--card);border:1.5px solid var(--bdr);border-radius:16px;padding:1.4rem;box-shadow:0 2px 10px rgba(0,0,0,.07)}
+.dc-meta{margin-bottom:.7rem}
+.dc-type-badge{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--or);background:#fff3e0;border-radius:10px;padding:3px 10px;border:1px solid var(--bdr)}
+.dc-clue{font-size:1rem;font-weight:600;color:var(--tx);line-height:1.65;margin-bottom:1.1rem;padding:.8rem 1rem;background:#fffaf4;border-radius:10px;border-left:4px solid var(--or)}
+.dc-choices{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:.8rem}
+@media(max-width:500px){.dc-choices{grid-template-columns:1fr}}
+.dc-choice{padding:.75rem .9rem;border:1.5px solid var(--bdr);border-radius:10px;cursor:pointer;font-size:.88rem;color:var(--tx2);background:#fff;transition:all .14s;display:flex;gap:.6rem;align-items:flex-start;text-align:left;font-family:"Lato",sans-serif;line-height:1.4}
+.dc-choice:hover:not([disabled]){border-color:var(--orl);background:#fff8f2;transform:translateY(-1px)}
+.dc-choice-letter{font-weight:800;color:var(--or);min-width:18px;font-size:.85rem;flex-shrink:0}
+.dc-choice.dc-correct{border-color:var(--ok);background:var(--okb);cursor:default;transform:none}
+.dc-choice.dc-correct .dc-choice-letter{color:var(--ok)}
+.dc-choice.dc-wrong{border-color:var(--er);background:var(--erb);cursor:default;transform:none}
+.dc-choice.dc-wrong .dc-choice-letter{color:var(--er)}
+.dc-choice[disabled]{cursor:default;transform:none}
+.dc-feedback{border-radius:10px;padding:.85rem 1rem;font-size:.87rem;line-height:1.6;margin-bottom:.6rem}
+.dc-fb-ok{background:var(--okb);border:1px solid var(--ok)}
+.dc-fb-bad{background:var(--erb);border:1px solid var(--er)}
+.dc-fb-detail{margin-top:.5rem;display:grid;gap:.25rem}
+.dc-fb-row{display:block;font-size:.84rem;color:var(--tx2)}
+.dc-nav{justify-content:flex-end;margin-top:.4rem}
+.dc-done{text-align:center;padding:2rem 1rem}
+.dc-done-score{font-family:"Playfair Display",serif;font-size:1.5rem;font-weight:700;color:var(--ord);margin-bottom:.5rem}
 
 </style>
 </head>
@@ -630,7 +666,7 @@ body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--tx);min-heig
       </div>
     </div>
   </div>
-  <div style="text-align:center;margin:.6rem 0 .4rem"><button class="ps-trigger" data-pskey="m1_discharge" onclick="psGo(this)">&#x1F3C1; Pit Stop &mdash; test yourself here!</button></div>
+  <div style="text-align:center;margin:.6rem 0 .4rem"><button class="ps-trigger" data-pskey="m1_extra" onclick="psGo(this)">&#x1F3C1; Pit Stop &mdash; test yourself here!</button></div>
 <div class="section">
     <h3>&#x1F6BD; Post-Op GI Complications</h3>
     <div class="grid2">
@@ -675,7 +711,7 @@ body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--tx);min-heig
       <div class="box box-info"><strong>&#x1F3E0; What to Teach</strong>Wound care, signs of infection (report to provider), medication instructions, activity restrictions (no lifting &gt;10 lbs x4&ndash;6 wks for abdominal surgery), follow-up appointment, emergency contact info, when/where to seek care.</div>
     </div>
   </div>
-  <div style="text-align:center;margin:.6rem 0 .4rem"><button class="ps-trigger" data-pskey="m1_extra" onclick="psGo(this)">&#x1F3C1; Pit Stop &mdash; test yourself here!</button></div>
+  <div style="text-align:center;margin:.6rem 0 .4rem"><button class="ps-trigger" data-pskey="m1_discharge" onclick="psGo(this)">&#x1F3C1; Pit Stop &mdash; test yourself here!</button></div>
 </div>
 
 <!-- ================================================ MODULE 2 -->
@@ -744,6 +780,7 @@ body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--tx);min-heig
     <div class="box box-ok"><strong>Hypernatremia Signs</strong>Fatigue, restlessness, muscle twitching, seizures (severe). Increased fluid retention, edema, decreased UO. Extreme thirst, dry mouth. CNS changes (brain cells shrink). Treat: gradual Na+ lowering with isotonic or 0.45% NS, restrict sodium.</div>
   </div>
 </div>
+<div style="text-align:center;margin:.6rem 0 .4rem"><button class="ps-trigger" data-pskey="m2_electrolytes" onclick="psGo(this)">&#x1F3C1; Pit Stop &mdash; test yourself here!</button></div>
 <div class="section">
       <h3>&#x26A1; Potassium (K+) — The Heart Electrolyte</h3>
       <p>Normal: <strong>3.5&ndash;5.0 mEq/L</strong><br>K+ controls heart rhythm and muscle contraction. Small changes = BIG consequences.</p>
@@ -769,7 +806,7 @@ body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--tx);min-heig
         <li><strong>Treatment sequence:</strong> <strong>C-BIG-K:</strong> Calcium gluconate &rarr; Bicarb &rarr; Insulin+Glucose &rarr; Kayexalate &rarr; (dialysis)</li>
       </ul>
     </div>
-  <div style="text-align:center;margin:.6rem 0 .4rem"><button class="ps-trigger" data-pskey="m2_electrolytes" onclick="psGo(this)">&#x1F3C1; Pit Stop &mdash; test yourself here!</button></div>
+  <div style="text-align:center;margin:.6rem 0 .4rem"><button class="ps-trigger" data-pskey="m2_potassium" onclick="psGo(this)">&#x1F3C1; Pit Stop &mdash; test yourself here!</button></div>
 <div class="section">
     <h3>&#x1F4C9; Fluid Volume — Too Much vs. Too Little</h3>
     <table class="ctbl">
@@ -929,7 +966,8 @@ body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--tx);min-heig
       <div class="box box-tip"><strong>PRBCs (Packed Red Cells)</strong>Restore oxygen-carrying capacity. Use when Hgb &lt;7-8 g/dL (symptomatic anemia) or acute blood loss. Must check compatibility!</div>
     </div>
   </div>
-  <div style="text-align:center;margin:.6rem 0 .4rem"><button class="ps-trigger" data-pskey="m2_potassium" onclick="psGo(this)">&#x1F3C1; Pit Stop &mdash; test yourself here!</button></div>
+<div style="text-align:center;margin:.6rem 0 .4rem"><button class="ps-trigger" data-pskey="m2_end" onclick="psGo(this)">&#x1F3C1; Pit Stop &mdash; test yourself here!</button></div>
+
 </div>
 
 <!-- ================================================ MODULE 3 -->
@@ -1633,6 +1671,7 @@ body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--tx);min-heig
     <button class="ar-tab" onclick="switchAR('scenarios')">&#x1FA7A; Patient Scenarios</button>
     <button class="ar-tab" onclick="switchAR('matching')">&#x1F9E9; Match-Up</button>
     <button class="ar-tab" onclick="switchAR('speedround')">&#x26A1; Speed Round</button>
+    <button class="ar-tab" onclick="switchAR('drugchallenge')">&#x1F48A; Drug Challenge</button>
   </div>
 
   <!-- FLASHCARDS -->
@@ -1739,7 +1778,36 @@ body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--tx);min-heig
   </div>
 
   <!-- SPEED ROUND -->
-  <div id="ar-speedround" class="ar-panel">
+  >
+
+<!-- DRUG CHALLENGE -->
+  <div id="ar-drugchallenge" class="ar-panel">
+    <div class="ar-instructions">
+      <strong>&#x1F48A; Drug Challenge</strong><br>
+      You get a clue — plain English description, mechanism, use, side effect, or antidote — and pick the correct drug from 4 options. Every drug gets tested from multiple angles. Immediate feedback after each answer shows the full drug profile.
+    </div>
+    <div style="display:flex;gap:.8rem;align-items:center;flex-wrap:wrap;margin-bottom:1rem">
+      <select id="dc-mod-filter" style="padding:.35rem .7rem;border-radius:8px;border:1.5px solid var(--bdr);font-size:.85rem;font-family:inherit;background:var(--card)">
+        <option value="all">All Modules (all 23 drugs)</option>
+        <option value="1">Module 1 — Perioperative</option>
+        <option value="2">Module 2 — Fluids &amp; Electrolytes</option>
+        <option value="3">Module 3 — Neurological</option>
+        <option value="4">Module 4 — Cardiovascular</option>
+      </select>
+      <button class="btn btn-p btn-sm" onclick="startDrugChallenge()">&#x25B6; Start Challenge</button>
+      <span id="dc-progress" style="font-size:.82rem;color:var(--tx3);font-weight:600"></span>
+      <span style="font-size:.82rem;color:var(--tx3)">Score: <strong id="dc-score">0 / 0</strong></span>
+    </div>
+    <div id="dc-container">
+      <div style="text-align:center;padding:2rem;color:var(--tx3)">
+        <div style="font-size:2rem;margin-bottom:.5rem">&#x1F48A;</div>
+        <p>Select a module filter and press <strong>Start Challenge</strong> to begin.</p>
+        <p style="font-size:.85rem;margin-top:.3rem">Each drug is tested 3&ndash;5 times from different angles.</p>
+      </div>
+    </div>
+  </div>
+
+<div id="ar-speedround" class="ar-panel">
     <div class="ar-instructions">
       <strong>&#x26A1; How to Play &mdash; Speed Round</strong><br>
       True/False and multiple-choice questions flash one at a time. Click an answer as fast as you can &mdash; the card flashes green or red instantly. Build your streak! No timer, just rapid-fire recall practice. Press Start to begin.
@@ -1928,6 +1996,8 @@ body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--tx);min-heig
     <h2>&#x1F48A; Drug Reference Guide</h2>
     <p class="tagline">All key medications from Modules 1&ndash;4. Filter by module or drug name. Red text = critical safety information.</p>
   </div>
+<div style="display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin:.8rem 0 1rem"><button class="ps-trigger" data-pskey="drugs_m1" onclick="psGo(this)">&#x1F3C1; M1 Drug Quiz</button><button class="ps-trigger" data-pskey="drugs_m2" onclick="psGo(this)">&#x1F3C1; M2 Drug Quiz</button><button class="ps-trigger" data-pskey="drugs_m3" onclick="psGo(this)">&#x1F3C1; M3 Drug Quiz</button><button class="ps-trigger" data-pskey="drugs_m4" onclick="psGo(this)">&#x1F3C1; M4 Drug Quiz</button></div>
+
   <div class="drug-filter">
     <input type="text" id="drug-search" placeholder="&#x1F50D; Search drug name, class, or condition..." oninput="filterDrugs()">
     <select id="drug-mod" onchange="filterDrugs()">
@@ -2201,7 +2271,7 @@ function buildScenarios(){
   var st=sc_state[globalIdx];
   var stages=s.stages;
   var curStage=st.stage;
-  var allDone=Object.keys(st.answers).length>=stages.length;
+  var allDone=st.stage>=stages.length;
   var L='ABCDE';
   var modLabel='M'+s.mod;
   var avatar=(typeof SC_AVATARS!=='undefined'&&SC_AVATARS[globalIdx])?SC_AVATARS[globalIdx]:'<div style="font-size:2.5rem;text-align:center">'+s.icon+'</div>';
@@ -2286,11 +2356,13 @@ function answerSC2(caseIdx,stageIdx,choiceIdx){
   var st=sc_state[caseIdx];
   if(st.answers[stageIdx]!==undefined) return;
   var correct=(choiceIdx===SCENARIOS[caseIdx].stages[stageIdx].ans);
-  st.answers[stageIdx]=correct?true:choiceIdx;
+  st.answers[stageIdx]=choiceIdx;
   if(correct) sc_score++;
   sc_total++;
-  document.getElementById('sc-score').textContent=sc_score;
-  document.getElementById('sc-total').textContent=sc_total;
+  var scoreEl=document.getElementById('sc-score');
+  var totalEl=document.getElementById('sc-total');
+  if(scoreEl) scoreEl.textContent=sc_score;
+  if(totalEl) totalEl.textContent=sc_total;
   buildScenarios();
   var card=document.getElementById('sc-card-'+caseIdx);
   if(card) card.scrollIntoView({behavior:'smooth',block:'nearest'});
@@ -2479,7 +2551,7 @@ function switchAR(id){
   document.querySelectorAll('.ar-tab').forEach(function(b){b.classList.remove('active');});
   var panel=document.getElementById('ar-'+id);
   if(panel) panel.classList.add('active');
-  var map={'flashcards':0,'scenarios':1,'matching':2,'speedround':3};
+  var map={'flashcards':0,'scenarios':1,'matching':2,'speedround':3,'drugchallenge':4};
   var tabs=document.querySelectorAll('.ar-tab');
   if(map[id]!==undefined&&tabs[map[id]]) tabs[map[id]].classList.add('active');
 }
@@ -2581,6 +2653,148 @@ window.onload=function(){
   loadMatch();
   buildDrugTable();
 };
+
+// ══ DRUG CHALLENGE ENGINE ══
+var _dc_drugs=[], _dc_pool=[], _dc_idx=0, _dc_score=0, _dc_total=0, _dc_answered=false, _dc_mod='all';
+
+function startDrugChallenge(){
+  var modFilter = document.getElementById('dc-mod-filter');
+  _dc_mod = modFilter ? modFilter.value : 'all';
+  _dc_drugs = DRUGS.filter(function(d){ return _dc_mod==='all' || String(d.mod)===_dc_mod; });
+  if(_dc_drugs.length < 4){ alert('Need at least 4 drugs. Select a broader filter.'); return; }
+  _dc_pool = buildDCPool(_dc_drugs);
+  shuffle(_dc_pool);
+  _dc_idx=0; _dc_score=0; _dc_total=0; _dc_answered=false;
+  renderDC();
+}
+
+function buildDCPool(drugs){
+  var pool=[];
+  var clueTypes=['plain','use','moa','ae','antidote'];
+  drugs.forEach(function(d){
+    clueTypes.forEach(function(ct){
+      var clue='', label='';
+      if(ct==='plain'){ clue=d.plain; label='Which drug fits this description?'; }
+      else if(ct==='use'){ clue=d.use; label='Which drug is used for this?'; }
+      else if(ct==='moa'){ clue=d.moa; label='Which drug works by this mechanism?'; }
+      else if(ct==='ae'){ clue=d.ae; label='Which drug has these key side effects?'; }
+      else if(ct==='antidote'){
+        var skip=['N/A','None','Supportive','No antidote','None needed','None specific','None.'];
+        var bad=!d.antidote;
+        if(!bad) for(var si=0;si<skip.length;si++){if(d.antidote.indexOf(skip[si])===0){bad=true;break;}}
+        if(bad) return;
+        clue='Antidote/reversal for this drug: '+d.antidote; label='Which drug matches this antidote or reversal?';
+      }
+      if(clue) pool.push({drug:d, clue:clue, label:label, type:ct});
+    });
+  });
+  return pool;
+}
+
+function shuffle(arr){
+  for(var i=arr.length-1;i>0;i--){
+    var j=Math.floor(Math.random()*(i+1));
+    var tmp=arr[i]; arr[i]=arr[j]; arr[j]=tmp;
+  }
+  return arr;
+}
+
+function getDistractors(correctDrug, allDrugs, n){
+  var others = allDrugs.filter(function(d){ return d.name!==correctDrug.name; });
+  shuffle(others);
+  return others.slice(0,n);
+}
+
+function renderDC(){
+  var cont = document.getElementById('dc-container');
+  if(!cont) return;
+  var prog = document.getElementById('dc-progress');
+  var scoreEl = document.getElementById('dc-score');
+  if(prog) prog.textContent = (_dc_idx+1)+' / '+_dc_pool.length;
+  if(scoreEl) scoreEl.textContent = _dc_score+' / '+_dc_total;
+
+  if(_dc_idx >= _dc_pool.length){
+    var pct = _dc_total>0 ? Math.round(_dc_score/_dc_total*100) : 0;
+    var emoji = pct>=90?'🏆':pct>=70?'⭐':'📋';
+    cont.innerHTML='<div class="dc-done">'
+      +'<div style="font-size:2.8rem;margin-bottom:.5rem">'+emoji+'</div>'
+      +'<div class="dc-done-score">'+_dc_score+' / '+_dc_total+' correct ('+pct+'%)</div>'
+      +'<p style="color:var(--tx2);font-size:.9rem;margin-bottom:1.2rem">'+(pct>=90?'Excellent! You know your drugs cold.':pct>=70?'Good work — review the ones you missed.':'Keep practicing — drugs are high-yield exam material.')+'</p>'
+      +'<button class="btn btn-p" onclick="startDrugChallenge()">&#x1F504; Play Again</button>'
+      +'</div>';
+    return;
+  }
+
+  _dc_answered = false;
+  var item = _dc_pool[_dc_idx];
+  var correct = item.drug;
+  var distractors = getDistractors(correct, _dc_drugs, 3);
+  var choices = shuffle([correct].concat(distractors));
+  var modColors = ['','#b5626e','#9e4f62','#6a5acd','#8b1a1a'];
+  var mc = modColors[correct.mod]||'var(--or)';
+
+  var html = '<div class="dc-card" style="border-top:4px solid '+mc+'">';
+  html += '<div class="dc-meta"><span class="dc-type-badge">'+getLabelIcon(item.type)+' '+item.label+'</span></div>';
+  html += '<div class="dc-clue">'+item.clue+'</div>';
+  html += '<div class="dc-choices">';
+  choices.forEach(function(d,i){
+    html += '<button class="dc-choice" onclick="answerDC(this,\''+escDQ(d.name)+'\',\''+escDQ(correct.name)+'\')">'
+          + '<span class="dc-choice-letter">'+['A','B','C','D'][i]+'</span>'
+          + '<span>'+d.name+'</span></button>';
+  });
+  html += '</div>';
+  html += '<div class="dc-feedback" id="dc-fb" style="display:none"></div>';
+  html += '<div class="dc-nav" id="dc-nav" style="display:none">'
+        + '<button class="btn btn-p btn-sm" onclick="nextDC()">'
+        + (_dc_idx<_dc_pool.length-1?'Next &#8594;':'See Results &#x1F3C6;')
+        + '</button></div>';
+  html += '</div>';
+  cont.innerHTML = html;
+}
+
+function escDQ(s){ return s.replace(/'/g,"\\'"); }
+function getLabelIcon(t){
+  return {plain:'&#x1F4AC;',use:'&#x2705;',moa:'&#x2699;',ae:'&#x26A0;',antidote:'&#x1F489;'}[t]||'&#x1F48A;';
+}
+
+function answerDC(btn, chosen, correct){
+  if(_dc_answered) return;
+  _dc_answered=true; _dc_total++;
+  var isCorrect = (chosen===correct);
+  if(isCorrect) _dc_score++;
+  document.getElementById('dc-score').textContent = _dc_score+' / '+_dc_total;
+
+  var allBtns = document.querySelectorAll('.dc-choice');
+  allBtns.forEach(function(b){
+    b.disabled=true;
+    var bName = b.querySelector('span:last-child').textContent;
+    if(bName===correct) b.classList.add('dc-correct');
+    else if(bName===chosen && !isCorrect) b.classList.add('dc-wrong');
+  });
+
+  var item = _dc_pool[_dc_idx];
+  var fb = document.getElementById('dc-fb');
+  if(fb){
+    fb.style.display='block';
+    fb.className = 'dc-feedback '+(isCorrect?'dc-fb-ok':'dc-fb-bad');
+    var d = item.drug;
+    fb.innerHTML = (isCorrect?'<strong>&#x2705; Correct!</strong>':'<strong>&#x274C; Incorrect. The answer was '+correct+'</strong>')
+      +'<div class="dc-fb-detail">'
+      +'<span class="dc-fb-row"><b>Plain English:</b> '+d.plain+'</span>'
+      +'<span class="dc-fb-row"><b>MOA:</b> '+d.moa+'</span>'
+      +'<span class="dc-fb-row"><b>Use:</b> '+d.use+'</span>'
+      +'<span class="dc-fb-row"><b>Antidote:</b> '+(d.antidote&&d.antidote!=='N/A'?'<strong style="color:var(--or)">'+d.antidote+'</strong>':'None / Supportive')+'</span>'
+      +'</div>';
+  }
+  var nav = document.getElementById('dc-nav');
+  if(nav) nav.style.display='flex';
+}
+
+function nextDC(){
+  _dc_idx++;
+  _dc_answered=false;
+  renderDC();
+}
 </script>
 <script>
 
@@ -2677,7 +2891,10 @@ var PS_BANKS={
     {q:'Lactated Ringer\'s is preferred over normal saline for most surgical fluid replacement because:',opts:['It contains no sodium and prevents hypernatremia','It more closely resembles plasma electrolyte composition and is less acidifying','It contains glucose for energy','It is hypotonic and better rehydrates cells'],ans:1,exp:'LR contains Na, K, Ca, Cl, and lactate (metabolized to bicarb) — closely matches plasma. Large volumes of NS cause hyperchloremic metabolic acidosis. LR is the preferred surgical replacement fluid.'},
     {q:'D5W is classified as isotonic in the IV bag but behaves like which type of fluid once infused?',opts:['Isotonic — no change','Hypertonic, drawing water from cells','Hypotonic, because glucose is metabolized leaving free water','Colloid, expanding the vascular space'],ans:2,exp:'D5W is isotonic in the bag (308 mOsm/L) but glucose is rapidly metabolized, leaving free water → acts as hypotonic fluid. Expands intracellular fluid. Used for free water replacement, not volume expansion. NOT appropriate for hypovolemia.'},
     {q:'Second spacing (edema) occurs when fluid accumulates in:',opts:['The intravascular compartment','The interstitial space abnormally (localized or generalized)','The intracellular compartment','The pleural space only'],ans:1,exp:'Second spacing = excess fluid in interstitial space = edema. Causes: elevated hydrostatic pressure, decreased plasma oncotic pressure (low albumin), inflammation, lymphatic obstruction. Localized (trauma/burn) or generalized (anasarca from heart/renal/liver failure).'},
-    {q:'Third spacing is clinically significant because fluid trapped in a third space:',opts:['Is readily available for use by the body','Represents a true volume loss from the circulation even though total body water is unchanged','Causes hypervolemia','Is the same as interstitial edema'],ans:1,exp:'Third spacing = fluid trapped in non-functional spaces (peritoneal, pleural, pericardial) — not accessible to circulation. Body treats it as volume loss → hypovolemia despite unchanged total body water. Examples: peritonitis, pancreatitis, bowel obstruction.'}
+    {q:'Third spacing is clinically significant because fluid trapped in a third space:',opts:['Is readily available for use by the body','Represents a true volume loss from the circulation even though total body water is unchanged','Causes hypervolemia','Is the same as interstitial edema'],ans:1,exp:'Third spacing = fluid trapped in non-functional spaces (peritoneal, pleural, pericardial) — not accessible to circulation. Body treats it as volume loss → hypovolemia despite unchanged total body water. Examples: peritonitis, pancreatitis, bowel obstruction.'},
+    {q:'A patient needs IV hydration after surgery with normal electrolytes. The BEST choice is:',opts:['0.45% NaCl (hypotonic)','3% NaCl (hypertonic)','0.9% NaCl or Lactated Ringer (isotonic)','D10W'],ans:2,exp:'Isotonic solutions (0.9% NS, LR) stay in the vascular space and expand volume without shifting fluid into or out of cells. LR most closely resembles plasma composition. 0.9% NS preferred for head injuries and hyperkalemia. D5W is isotonic in the bag but becomes hypotonic after dextrose is metabolized.'},
+    {q:'Hypotonic IV fluids such as 0.45% NS are indicated for:',opts:['Rapid volume expansion in shock','Hypertonic dehydration and cellular dehydration where cells need free water','Replacing blood loss','Treating hyponatremia'],ans:1,exp:'Hypotonic fluids shift water INTO cells. Used for hypertonic dehydration (elevated serum Na+) and when cells need free water. NEVER use in head injury (worsens cerebral edema) or severe hypovolemia (will not adequately expand vascular volume).'},
+    {q:'3% hypertonic saline is ONLY used for:',opts:['Routine post-op hydration','Severe symptomatic hyponatremia with seizures or coma — corrected slowly at max 8-10 mEq per L per 24 hours','Hyperkalemia treatment','Dehydration in elderly patients'],ans:1,exp:'3% NS draws water OUT of cells osmotically. Reserved for severe symptomatic hyponatremia causing seizures or altered consciousness. Correcting too fast causes osmotic demyelination syndrome (ODS) — permanent brainstem damage. Monitor Na+ every 2-4 hours during infusion.'}
   ],
 
   m2_electrolytes:[
@@ -2700,7 +2917,10 @@ var PS_BANKS={
     {q:'A patient with hypertonic dehydration (water loss > electrolyte loss) should be treated with:',opts:['Isotonic fluids (0.9% NS)','Hypertonic fluids (3% NS)','Hypotonic fluids (0.45% NS)','Colloids (albumin)'],ans:2,exp:'Hypertonic dehydration: plasma is concentrated → replace with hypotonic fluid (0.45% NS) to dilute plasma and rehydrate cells. Isotonic dehydration → isotonic fluid. Hypotonic dehydration → hypertonic fluid. Match the type.'},
     {q:'A blood transfusion reaction causing fever, chills, flank pain, and dark urine most likely indicates:',opts:['Febrile non-hemolytic reaction','Acute hemolytic reaction','Allergic reaction','TRALI (transfusion-related acute lung injury)'],ans:1,exp:'Acute hemolytic reaction: incompatible blood → antibodies destroy donor RBCs → hemoglobin released → dark urine, flank pain, fever, chills, hypotension. STOP transfusion IMMEDIATELY, normal saline, notify blood bank and physician. Life-threatening.'},
     {q:'During a blood transfusion the patient develops sudden dyspnea, hypoxia, and bilateral pulmonary infiltrates within 6 hours. This is most consistent with:',opts:['Allergic reaction','Acute hemolytic reaction','TRALI (transfusion-related acute lung injury)','Circulatory overload (TACO)'],ans:2,exp:'TRALI: within 6 hours of transfusion — dyspnea, hypoxia, bilateral infiltrates, non-cardiogenic pulmonary edema. Stop transfusion, O2, supportive care. TACO = circulatory overload from fluid → also has hypertension and responds to diuretics.'},
-    {q:'Which assessment finding distinguishes fluid volume deficit from fluid volume overload?',opts:['Presence of peripheral edema','Skin turgor and mucous membrane moisture','Urine output greater than 30 mL/hr','Heart rate below 60'],ans:1,exp:'FVD: poor skin turgor, dry mucous membranes, decreased urine output, tachycardia, hypotension, flat neck veins. FVO: pitting edema, crackles, bounding pulse, JVD, hypertension, weight gain. Skin turgor and mucous membranes are key differentiators.'}
+    {q:'Which assessment finding distinguishes fluid volume deficit from fluid volume overload?',opts:['Presence of peripheral edema','Skin turgor and mucous membrane moisture','Urine output greater than 30 mL/hr','Heart rate below 60'],ans:1,exp:'FVD: poor skin turgor, dry mucous membranes, decreased urine output, tachycardia, hypotension, flat neck veins. FVO: pitting edema, crackles, bounding pulse, JVD, hypertension, weight gain. Skin turgor and mucous membranes are key differentiators.'},
+    {q:'Classic signs of fluid volume overload include all of the following EXCEPT:',opts:['Crackles in the lungs','Peripheral pitting edema','Poor skin turgor and dry mucous membranes','Jugular venous distension'],ans:2,exp:'Poor skin turgor and dry mucous membranes are signs of FLUID VOLUME DEFICIT, not overload. FVO signs: crackles (pulmonary edema), peripheral edema, JVD, bounding pulse, hypertension, weight gain, S3 gallop. FVD signs: poor turgor, dry mucosa, tachycardia, hypotension, oliguria.'},
+    {q:'A patient with FVD has HR 116, BP 88/58, UO 16 mL/hr. The priority nursing action is:',opts:['Restrict all fluids','Administer ordered isotonic IV fluids and reassess urine output and vital signs','Give a diuretic','Elevate legs and apply compression stockings'],ans:1,exp:'FVD treatment = replace lost volume. Isotonic fluids (0.9% NS or LR) restore vascular volume. Monitor response: HR should decrease, BP improve, UO increase toward 30 mL/hr minimum. Identify the cause (vomiting, diarrhea, bleeding, poor intake) and treat it.'},
+    {q:'Daily weights are the gold standard for monitoring fluid balance because:',opts:['They are quicker than measuring I&O','1 kg of weight change equals approximately 1 liter of fluid — the most sensitive early indicator','They replace the need for I&O monitoring','Scales are always accurate'],ans:1,exp:'1 kg = 1 liter. Daily weights detect fluid retention BEFORE clinical signs appear. Use same time (morning after voiding), same scale, same clothing. Report: gain of 2-3 lbs in 24 hours or 5 lbs in one week to provider. This is the earliest indicator of fluid imbalance in HF patients.'}
   ],
 
   m2_potassium:[
@@ -2800,7 +3020,57 @@ var PS_BANKS={
     {q:'Which surgical intervention is used for significant carotid artery stenosis to prevent stroke?',opts:['Coronary artery bypass graft (CABG)','Carotid endarterectomy (CEA)','Peripheral angioplasty','Femoral-popliteal bypass'],ans:1,exp:'Carotid endarterectomy (CEA): surgical removal of atherosclerotic plaque from carotid artery to prevent embolic stroke. Post-op monitoring: stroke symptoms (sudden weakness/speech changes), cranial nerve deficits (VII, X, XII), hematoma compressing airway, blood pressure lability.'},
     {q:'Gerontologic considerations for vascular disease include which vessel change?',opts:['Increased vessel elasticity with age','Vessel walls stiffen with age → increased peripheral resistance → increased LV workload','Decreased peripheral resistance due to smooth muscle relaxation','Improved blood flow from vascular remodeling'],ans:1,exp:'Aging vascular changes: vessel walls stiffen/lose elasticity → increased peripheral resistance → increased afterload → increased LV workload → LVH → HF risk. Impaired transport of oxygen and nutrients to tissues. Isolated systolic HTN common. Greater risk for atherosclerosis and thrombosis.'},
     {q:'Wound care nutrition for patients with arterial or venous ulcers should emphasize:',opts:['Low protein diet to reduce metabolic load','High protein, vitamin C, vitamin A, iron, and zinc to promote wound healing','High carbohydrate diet for energy','Low fat diet exclusively'],ans:1,exp:'Wound healing nutrition: HIGH protein (builds collagen and new tissue), vitamin C (collagen synthesis), vitamin A (epithelialization), zinc (cell proliferation), iron (oxygen transport). Malnutrition significantly impairs healing. Albumin <3.5 g/dL = high infection and poor healing risk.'}
+  ],
+
+  m2_end:[
+    {q:'Second spacing (pitting edema) means fluid has shifted to:',opts:['A body cavity like the peritoneum','The interstitial space causing edema — fluid is in the body but not usable','Outside the body entirely','The intracellular compartment'],ans:1,exp:'Second spacing = fluid moves from vascular space into interstitial tissue = pitting edema. The fluid is in the body but unavailable for circulation. Treat the underlying cause (HF, low albumin, venous insufficiency). Third spacing = fluid in body cavities (ascites, pleural effusion).'},
+    {q:'Third spacing is most dangerous because:',opts:['It causes hypervolemia and hypertension','Fluid trapped in body cavities is unavailable for circulation causing effective hypovolemia','It only affects the skin','It always resolves on its own'],ans:1,exp:'Third spacing traps fluid in peritoneal/pleural/pericardial cavities where it cannot circulate. The patient develops hypovolemia despite having fluid in the body. Examples: ascites from cirrhosis, pleural effusion, pancreatitis, burns. Treat the cause and monitor for reabsorption.'},
+    {q:'The FIRST ECG change seen in hyperkalemia is:',opts:['Widened QRS complex','Flat P-waves','Peaked tall narrow T-waves','Sine wave pattern'],ans:2,exp:'Peaked T-waves are the FIRST sign of hyperkalemia. As K+ rises further: peaked T then wide QRS then flat P then prolonged PR then sine wave then cardiac arrest. Early recognition allows treatment before fatal arrhythmias. Calcium gluconate is the first drug to protect the heart.'},
+    {q:'The FIRST drug given in a hyperkalemia emergency with ECG changes is:',opts:['Kayexalate to remove K+','Insulin plus dextrose to shift K+ into cells','Calcium gluconate IV to stabilize the cardiac membrane','Sodium bicarbonate'],ans:2,exp:'Calcium gluconate IV stabilizes the cardiac membrane IMMEDIATELY (within 1-3 minutes). It does NOT lower K+ — it just protects the heart. Follow with insulin+dextrose to shift K+ into cells, then Kayexalate or Lokelma to permanently remove K+ from the body.'},
+    {q:'Plasma expanders (colloids like albumin) are preferred over crystalloids when:',opts:['The patient needs routine hydration','Oncotic pressure must be increased to keep fluid in the vascular space, such as in severe hypoalbuminemia or burns','The patient needs electrolyte replacement','The patient is mildly dehydrated'],ans:1,exp:'Colloids contain large molecules that cannot cross capillary membranes. They pull fluid into the vascular space and keep it there by increasing oncotic pressure. Used when crystalloids alone are inadequate: severe burns, hypoalbuminemia, hemorrhagic shock. More expensive than crystalloids.'},
+    {q:'Before starting a blood transfusion, two nurses must verify at the bedside:',opts:['Only the patients name and date of birth','Patient ID, blood type, unit number, expiration date, and crossmatch results','Just the physicians order','Only the blood type'],ans:1,exp:'TWO-nurse verification at the bedside is mandatory: patient armband ID + verbal confirmation, ABO/Rh type match, unit number, expiration date, crossmatch. This prevents hemolytic reactions which can be fatal. Also inspect the bag for clots or color changes before hanging.'},
+    {q:'Signs of an acute hemolytic transfusion reaction include:',opts:['Mild urticaria and itching only','Sudden back or flank pain, fever, chills, and red-tinged urine — stop the transfusion immediately','Low-grade fever alone','Mild shortness of breath only'],ans:1,exp:'Acute hemolytic reaction (ABO incompatibility) = most dangerous type. Signs: sudden back/flank pain, fever, chills, hypotension, hemoglobinuria (red-tinged urine), renal failure. STOP transfusion immediately, keep IV open with NEW tubing and NS, notify MD and blood bank, save the bag.'},
+    {q:'Which assessment finding indicates fluid volume deficit (FVD)?',opts:['Bounding pulse and crackles','Tachycardia, decreased urine output, poor skin turgor, dry mucous membranes, and orthostatic hypotension','Hypertension and peripheral edema','JVD and S3 heart sound'],ans:1,exp:'FVD signs = decreased volume: tachycardia (compensatory), decreased UO less than 30 mL/hr, poor skin turgor, dry mucous membranes, flat neck veins, weight loss, concentrated urine (dark, high specific gravity), orthostatic hypotension. Treat with isotonic fluids and address the cause.'}
+  ],
+  drugs_m1:[
+    {q:'Naloxone (Narcan) reverses opioid toxicity by:',opts:['Metabolizing opioids in the liver','Competitively blocking opioid receptors reversing respiratory depression','Stimulating the respiratory center directly','Raising blood pressure'],ans:1,exp:'Naloxone is an opioid ANTAGONIST — displaces opioids from receptors. Reverses respiratory depression within minutes. Short half-life (30-90 min) — patient may RENARCOTIZE if opioid outlasts Narcan. Monitor closely; repeat doses or infusion may be needed.'},
+    {q:'Dantrolene treats malignant hyperthermia by:',opts:['Lowering body temperature directly','Blocking calcium release from the sarcoplasmic reticulum stopping uncontrolled muscle contraction','Reversing succinylcholine binding','Sedating the patient'],ans:1,exp:'MH = uncontrolled Ca2+ release causing massive muscle contraction, hyperthermia, rigidity, acidosis, rhabdomyolysis. Dantrolene blocks Ca2+ release. Dose: 2.5 mg/kg IV repeated every 5 min. Stop the triggering agent (volatile anesthetic or succinylcholine) immediately.'},
+    {q:'Propofol infusion syndrome occurs with:',opts:['Any dose of propofol given once','Prolonged high-dose infusions over 4 mg per kg per hour for more than 48 hours causing metabolic acidosis and cardiac failure','Short-term induction dosing','Propofol given with opioids'],ans:1,exp:'PRIS: metabolic acidosis, dysrhythmias, rhabdomyolysis, green urine, renal failure. Risk: high doses over 48 hours. Monitor triglycerides. No reversal agent — supportive care. Propofol is safe for MH patients (not a trigger).'},
+    {q:'Succinylcholine is dangerous in burn and crush injury patients because:',opts:['It causes bradycardia in these patients','Upregulated extrajunctional receptors cause massive K+ release leading to life-threatening hyperkalemia','It does not work in these patients','It causes malignant hyperthermia in burns'],ans:1,exp:'Burns, crush injuries, denervation cause upregulation of extrajunctional ACh receptors. Succinylcholine triggers massive K+ efflux from ALL these receptors causing fatal hyperkalemia. Avoid after the first 24-48 hours of injury. Safe in acute trauma within 24 hours before upregulation.'},
+    {q:'Which drug is a short-acting IV anesthetic that appears milky white and has no reversal agent?',opts:['Ketamine','Propofol (Diprivan)','Midazolam','Etomidate'],ans:1,exp:'Propofol (Diprivan) is the milky white GABA agonist used for rapid anesthesia induction and maintenance. Burns in veins, causes hypotension and apnea. No reversal agent — airway and supportive care only. SAFE for MH patients.'},
+    {q:'A patient has opioid-induced respiratory depression post-op. Which drug reverses it AND what must the nurse monitor for after giving it?',opts:['Flumazenil — monitor for seizures','Naloxone (Narcan) — monitor for renarcotization as Narcan wears off faster than the opioid','Dantrolene — monitor for hyperthermia','Physostigmine — monitor for bradycardia'],ans:1,exp:'Naloxone reverses opioid effects within minutes. Critical point: Naloxone half-life is 30-90 min, SHORTER than most opioids. Patient can become sedated again (renarcotization) after Narcan wears off. Monitor closely, repeat doses or infusion may be needed.'},
+    {q:'The nurse is preparing dantrolene for malignant hyperthermia. The initial dose is:',opts:['1 mg/kg oral','2.5 mg/kg IV bolus — repeat every 5 minutes until symptoms resolve','10 mg/kg IV once','0.5 mg/kg subcutaneous'],ans:1,exp:'Dantrolene dose for MH: 2.5 mg/kg IV bolus, repeated every 5 minutes until symptoms resolve (up to 10 mg/kg total). It comes as a powder that must be reconstituted — takes time. Stock must be immediately available in every OR. Also stop ALL triggering agents immediately.'}
+  ],
+  drugs_m2:[
+    {q:'The most important electrolyte to monitor with furosemide (Lasix) is:',opts:['Sodium only','Potassium — loop diuretics cause significant K+ wasting that doubles digoxin toxicity risk','Calcium only','Phosphate only'],ans:1,exp:'Loop diuretics block Na+/K+/2Cl- causing significant K+ and Mg2+ loss. Hypokalemia is the most dangerous side effect. Especially dangerous with digoxin — hypokalemia doubles toxicity risk. Check K+ before giving furosemide. Also monitor for ototoxicity with high IV doses.'},
+    {q:'Spironolactone can cause dangerous hyperkalemia especially when combined with:',opts:['Calcium supplements only','ACE inhibitors or ARBs — triple whammy: all three raise potassium levels','Furosemide only','Beta-blockers'],ans:1,exp:'Spironolactone blocks aldosterone causing K+ retention. ACE-I and ARBs also raise K+ by reducing aldosterone. Triple whammy (spironolactone + ACE-I + renal impairment) causes severe hyperkalemia. Monitor K+ regularly. Hold if K+ over 5.0 mEq per L.'},
+    {q:'Insulin is given with dextrose for hyperkalemia because:',opts:['To improve absorption','To prevent hypoglycemia while insulin shifts K+ into cells — effect is temporary not permanent','Dextrose independently lowers K+','To speed up K+ removal in stool'],ans:1,exp:'Insulin drives K+ into cells rapidly but causes hypoglycemia. D50W prevents insulin-induced hypoglycemia. The K+ shift is TEMPORARY — must follow with Kayexalate, Lokelma, or dialysis to permanently eliminate excess K+.'},
+    {q:'Calcium gluconate is given first in hyperkalemia with ECG changes because:',opts:['It permanently removes K+ from the body','It shifts K+ into cells immediately','It stabilizes the cardiac membrane protecting against fatal arrhythmias — buys time for other treatments to work','It is the fastest K+ binder'],ans:2,exp:'Calcium gluconate stabilizes the cardiac membrane within 1-3 minutes. It does NOT lower K+ — it just protects the heart. This buys time while insulin+dextrose shifts K+ in and Kayexalate/Lokelma removes it permanently.'},
+    {q:'A patient on furosemide develops muscle cramps, weakness, and U-waves on ECG. The priority intervention is:',opts:['Give more furosemide','Replace potassium as ordered and notify provider of hypokalemia','Give calcium gluconate','Hold all diuretics permanently'],ans:1,exp:'U-waves + muscle weakness + cramps = hypokalemia from furosemide (loop diuretics waste K+). Replace K+ as ordered (oral or IV). IV K+ max 10 mEq/hr peripheral, NEVER IV push. Recheck K+ after replacement. This is especially dangerous for patients on digoxin.'},
+    {q:'Why must IV potassium NEVER be given by IV push?',opts:['It causes pain at the site only','IV push causes immediate cardiac arrhythmias and cardiac arrest — must be given diluted on a pump with cardiac monitoring','It precipitates in the line','It is only absorbed orally'],ans:1,exp:'IV potassium is CARDIOTOXIC at high concentrations. IV push can cause immediate fatal ventricular fibrillation. Always: dilute, use an infusion pump, max 10 mEq/hr peripheral or 20 mEq/hr central, always with cardiac monitoring. This is a high-alert medication.'},
+    {q:'Lokelma (sodium zirconium cyclosilicate) removes potassium by:',opts:['Shifting K+ into cells temporarily','Trapping K+ in the GI tract and excreting it in stool — permanently removes K+ from the body','Increasing renal K+ excretion','Blocking K+ absorption in the kidneys'],ans:1,exp:'Lokelma is a cation exchanger that selectively traps K+ ions in the GI tract, exchanging them for sodium and hydrogen. K+ is then excreted in stool — this PERMANENTLY removes K+ from the body. Onset 1-2 hours. Preferred over Kayexalate (no sorbitol, fewer GI side effects).'}
+  ],
+  drugs_m3:[
+    {q:'Before giving tPA for ischemic stroke the nurse MUST confirm:',opts:['Family has given consent','Non-contrast CT shows no hemorrhage — tPA in hemorrhagic stroke causes fatal brain bleeding','Blood glucose is above 200','Patient has no headache'],ans:1,exp:'tPA lyses clots but causes BLEEDING. In hemorrhagic stroke it causes massive brain hemorrhage. Non-contrast CT MUST be done first. Absolute contraindications: hemorrhagic stroke, recent surgery, active bleeding, BP over 185/110 uncontrolled. Door-to-needle goal: under 60 minutes. Window: 4.5 hours.'},
+    {q:'Flumazenil must be used cautiously in benzodiazepine overdose because:',opts:['It causes hypertension','It can precipitate seizures in benzo-dependent patients and has a short half-life causing re-sedation','It permanently blocks benzo receptors','It does not work for lorazepam'],ans:1,exp:'Flumazenil is a competitive GABA-A antagonist. Risk 1: seizures in chronically benzo-dependent patients (acute withdrawal). Risk 2: short half-life about 1 hour — most benzos outlast it causing re-sedation. Monitor after administration.'},
+    {q:'Carbidopa-levodopa (Sinemet) should be taken:',opts:['With a high-protein meal','30-60 minutes before meals — protein competes with levodopa absorption at the gut and blood-brain barrier','At bedtime only','With vitamin B6 to enhance conversion'],ans:1,exp:'Levodopa competes with amino acids for absorption. High-protein meals reduce effectiveness significantly. Teach: take 30-60 min before meals on empty stomach. Never stop abruptly — causes NMS-like syndrome. Dark urine/sweat is harmless. Takes 2-3 weeks for full effect.'},
+    {q:'The antidote for benzodiazepine overdose is:',opts:['Naloxone','Flumazenil — use cautiously in benzo-dependent patients due to seizure risk and short half-life','Physostigmine','Activated charcoal only'],ans:1,exp:'Flumazenil is the benzo antidote. Naloxone reverses opioids NOT benzos. Physostigmine reverses anticholinergic toxicity. Key: Flumazenil has shorter half-life than most benzos so monitor for re-sedation. Avoid in chronic benzo users — seizure risk.'},
+    {q:'A patient with Parkinson disease is accidentally given haloperidol. The nurse should anticipate:',opts:['Improved tremor control','Severe worsening of Parkinson symptoms — haloperidol blocks dopamine receptors, the opposite of what Parkinson patients need','Improved rigidity','No effect on Parkinson symptoms'],ans:1,exp:'Haloperidol and metoclopramide are dopamine ANTAGONISTS — they block dopamine receptors. Parkinson disease is caused by DOPAMINE DEFICIENCY. Giving dopamine blockers causes severe worsening of all Parkinson symptoms (tremor, rigidity, bradykinesia). These drugs are CONTRAINDICATED in Parkinson.'},
+    {q:'Phenytoin (Dilantin) IV must be given slowly because rapid infusion causes:',opts:['Hypertension and tachycardia','Severe hypotension and cardiac arrhythmias — max rate 50 mg per minute IV','Seizures from osmotic shift','Pulmonary edema'],ans:1,exp:'Phenytoin IV max rate: 50 mg/min (slower in elderly and cardiac patients). Rapid infusion causes hypotension and cardiac arrhythmias including heart block. Must be given in NS (precipitates in dextrose solutions). Monitor ECG and BP during infusion. Purple glove syndrome with extravasation.'},
+    {q:'Alteplase (tPA) is contraindicated in which patient presenting with stroke symptoms?',opts:['65-year-old with onset 3 hours ago and BP 160/90','45-year-old with onset 2 hours ago, CT showing hemorrhagic stroke','72-year-old with onset 4 hours ago and atrial fibrillation','55-year-old with onset 1 hour ago and elevated blood glucose'],ans:1,exp:'Hemorrhagic stroke is an ABSOLUTE contraindication to tPA — the drug lyses clots and would cause massive brain bleeding leading to death. Non-contrast CT is mandatory before any tPA. Other absolute contraindications: recent surgery/trauma, active bleeding, BP over 185/110 uncontrolled, anticoagulation.'}
+  ],
+  drugs_m4:[
+    {q:'Digoxin toxicity presents with which classic triad?',opts:['Tachycardia, hypertension, and rash','Bradycardia, nausea and vomiting, and visual disturbances such as yellow-green halos','Diarrhea, muscle cramps, and hypertension','Chest pain, fever, and confusion'],ans:1,exp:'Digoxin toxicity: GI (nausea, vomiting, anorexia — often first sign), CARDIAC (bradycardia, any arrhythmia, AV block), VISUAL (yellow-green halos, xanthopsia). Hold if HR under 60. Hypokalemia doubles toxicity risk even at therapeutic levels. Antidote: Digoxin Immune Fab (Digibind or DigiFab).'},
+    {q:'An ACE inhibitor patient develops sudden tongue swelling. Priority action:',opts:['Give diphenhydramine and continue the medication','STOP the ACE inhibitor permanently — this is angioedema, a life-threatening airway emergency, never rechallenge','Reduce the dose','Switch to another ACE inhibitor'],ans:1,exp:'ACE inhibitor angioedema = bradykinin accumulation causing airway obstruction. STOP permanently — never rechallenge (can recur fatally). Manage airway with epinephrine if severe. Switch to ARB (does not cause bradykinin buildup). Dry cough is another class effect requiring switch.'},
+    {q:'Nitroglycerin is contraindicated in inferior STEMI with RV involvement because:',opts:['It causes tachycardia in MI','RV is preload-dependent — NTG drops preload causing severe hypotension and cardiovascular collapse','It dissolves clots too quickly','It interacts with aspirin'],ans:1,exp:'Inferior STEMI often involves the RV. The RV depends on adequate preload to pump blood to the lungs. NTG causes venodilation dropping preload catastrophically causing cardiogenic shock. Also contraindicated with PDE5 inhibitors (sildenafil, tadalafil) within 24-48 hours.'},
+    {q:'The antidote for severe beta-blocker overdose is:',opts:['Atropine alone','Glucagon IV — stimulates the heart through glucagon receptors bypassing blocked beta receptors','Calcium gluconate only','Epinephrine alone'],ans:1,exp:'Glucagon activates cardiac adenylate cyclase through glucagon receptors — BYPASSES blocked beta receptors — increasing HR and contractility. Antidote for beta-blocker AND calcium channel blocker overdose. Support with IV fluids, atropine (limited effect), temporary pacing.'},
+    {q:'Teaching for a patient on clopidogrel (Plavix) after coronary stenting:',opts:['Stop it immediately if any bleeding occurs','Never stop without cardiologist approval — stopping prematurely causes stent thrombosis which is often fatal','It is optional after one month','Any physician can stop it for surgery'],ans:1,exp:'Stopping antiplatelet therapy prematurely after coronary stenting causes STENT THROMBOSIS — often fatal acute MI. Duration depends on stent type. Inform all providers. Platelet transfusion is the antidote for major bleeding. Teach: minor bleeding is expected; do not stop on your own.'},
+    {q:'A patient on digoxin has K+ of 3.0 mEq/L. The nurse should:',opts:['Give digoxin as ordered — low K+ does not affect digoxin','Hold digoxin and notify the provider — hypokalemia doubles the risk of digoxin toxicity even at therapeutic levels','Increase the digoxin dose to compensate','Give a potassium supplement and give the digoxin immediately after'],ans:1,exp:'Hypokalemia sensitizes the myocardium to digoxin toxicity. Even therapeutic digoxin levels (0.5-2.0 ng/mL) become toxic at low K+. HOLD digoxin, notify provider, replace K+ as ordered, recheck K+ before resuming digoxin. Also hold if HR under 60 bpm.'},
+    {q:'Which drug interaction makes nitroglycerin absolutely contraindicated?',opts:['Aspirin taken within 24 hours','PDE5 inhibitors such as sildenafil (Viagra) taken within 24-48 hours — causes severe refractory hypotension','Beta-blockers taken the same day','Statins taken the same morning'],ans:1,exp:'Nitroglycerin + PDE5 inhibitors (sildenafil/Viagra, tadalafil/Cialis) = severe refractory hypotension that can be fatal. PDE5 inhibitors prevent cGMP breakdown; NTG increases cGMP. Together they cause massive vasodilation. Always ask about recent PDE5 inhibitor use BEFORE giving NTG.'},
+    {q:'Glucagon is the antidote for beta-blocker overdose because:',opts:['It reverses beta receptors directly','It stimulates heart rate and contractility through glucagon receptors — completely bypasses the blocked beta receptors','It increases potassium levels to counteract the drug','It speeds up drug metabolism'],ans:1,exp:'Beta-blocker overdose blocks beta-1 receptors causing severe bradycardia and hypotension. Glucagon bypasses beta receptors entirely by activating glucagon receptors on cardiac cells, which also activate adenylate cyclase and increase heart rate and contractility. Also used for calcium channel blocker overdose.'}
   ]
+
+
 };
 
 var _psOpen=false,_psCurBtn=null,_psIdx=0,_psScore=0,_psAnswered=false,_psQs=[];
@@ -2952,6 +3222,6 @@ document.addEventListener('DOMContentLoaded',function(){
     <div class="ps-mbody"><div id="psContent"></div></div>
     <div class="ps-ftr"><button class="ps-skb" id="psSkip">Skip for now</button></div>
   </div>
-</div
+</div>
 </body>
 </html>
