@@ -1778,7 +1778,6 @@ body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--tx);min-heig
   </div>
 
   <!-- SPEED ROUND -->
-  >
 
 <!-- DRUG CHALLENGE -->
   <div id="ar-drugchallenge" class="ar-panel">
@@ -2298,7 +2297,7 @@ function buildScenarios(){
   html+='<div class="sc-progress-row">';
   stages.forEach(function(st2,i){
     var cls='sc-prog-pip';
-    if(st.answers[i]!==undefined) cls+=(st.answers[i]===true?' ok':' ng');
+    if(st.answers[i]!==undefined) cls+=(st.answers[i]===s.stages[i].ans?' ok':' ng');
     else if(i===curStage&&!allDone) cls+=' cur';
     html+='<div class="'+cls+'"></div>';
   });
@@ -2309,7 +2308,7 @@ function buildScenarios(){
   // Body
   html+='<div class="sc-body">';
   if(allDone){
-    var score=Object.values(st.answers).filter(Boolean).length;
+    var score=Object.keys(st.answers).filter(function(i){return st.answers[i]===s.stages[parseInt(i)].ans;}).length;
     html+='<div class="sc-complete">';
     html+='<div class="sc-complete-icon">'+(score===stages.length?'🏆':'📋')+'</div>';
     html+='<div class="sc-complete-score">'+score+'/'+stages.length+' correct</div>';
